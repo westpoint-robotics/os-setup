@@ -1,5 +1,5 @@
 # os-setup
-Directions for customizing Operating System after basic install. (For faculty and staff only)
+Directions for customizing Operating System after basic install. (For faculty and staff use only)
 
 - These modifications are reccommended based on several years of experience with Ubuntu and interaction with Cadets working on ROS. 
 - The biggest challenge most of us face is that we work on multiple projects and machines which are under the care of Cadets. 
