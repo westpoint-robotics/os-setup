@@ -18,7 +18,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 
 #### 3. Firefox Preferences 
 - Under Preferences -> Privacy -> History, select "Never remember history".
-- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy. These are great discussions to have with someone learning about computers. 
+- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy. These are great discussions to have with someone learning about computers.* 
 
 #### 4. Create 'cls' command 
 - In order to have a quick way to clear the screen add the below line to ~/.bashrc 
@@ -37,22 +37,17 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Disabled "Dim screen to save power"
 - Set "Turn screen off when inactive for:"
 
------
-6. Edited the Terminal's Default Profile to make the following change:
-	On the Scrolling tab - checked the block for "Unlimited scrolling"
-    
-REASON: Many times the output to the terminal sent by a build command exceeds this limit. To understand build problems, many times you need to scroll to the beginning of the output. This enables you to scroll back to the beginning of the buffer.
+#### 7. Edit Terminal's Default Profile
+- On the Scrolling tab, check box for "Unlimited scrolling"
+- *REASON: Many times the output to the terminal sent by a build command exceeds this limit. To understand build problems, many times you need to scroll to the beginning of the output. This enables you to scroll back to the beginning of the buffer.*
 
------
-7. Open GEDIT and choose Preferences.
-    On Editor Tab:
-        Change Tab width to 4
-        Check the box for "Insert spaces instead of tabs"
+#### 8. GEDIT Preferences.
+- Open a text file using Gedit 
+- Under Preferences -> Editor: Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
+- *REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation.*
 
-REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation. 
 
------
-8. Allow user1 to dialout on USB devices
+#### 9. Allow user1 to dialout on USB devices
 
 	sudo adduser user1 dialout
 
