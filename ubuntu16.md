@@ -48,33 +48,30 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 
 
 #### 9. Allow user1 to dialout on USB devices
+ - `sudo adduser user1 dialout`
+ - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
 
-	sudo adduser user1 dialout
+#### 10. Instal helper applications
+- `sudo apt-get install meld minicom ant git-core gksu openssh-server`
 
-REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.
+#### 11. Modify and Update grub
+- `sudo nano /etc/default/grub`
+- Modify the line GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash intel_idle.max_cstate=1"
+- `sudo update-grub`
+- `sudo reboot`
+- *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug affecting multiple users of 15.10 and 16.04 and Ubuntu is working to resolve it.* 
 
+#### 12. Scroll bars on side windows
+- Type this ijn the terminal to get the scroll bars to appear:
+- `gsettings set com.canonical.desktop.interface scrollbar-mode normal`
+- *REASON: This are the more familiar scrollbars and make the UI behave as many Cadets would expect it.*
 
------
-9. Installed helper applications
+#### 13. Recently opened items list
+- Type this in the terminal to increase the cached list of gedit:
+- `gsettings set org.gnome.gedit.preferences.ui max-recents "uint32 30"`
+- *REASON: The default setting is too small for the number of files that are used in these projects.*
 
-	sudo apt-get install meld minicom ant git-core gksu
-
------
-10. Change to default scroll bars on side windows
-
-	gsettings set com.canonical.desktop.interface scrollbar-mode normal
-
-REASON: This are the more familiar scrollbars and make the UI behave as many Cadets would expect it.
-
------
-11. Change the length of the recent opened items in gedit by typing in the terminal:
-
-    gsettings set org.gnome.gedit.preferences.ui max-recents "uint32 30"
-
-REASON: The default setting is too small for the number of files that are used in these projects.
-
-------
-12. Disable bluetooth on start up to conserve battery power
+#### 14. Disable bluetooth on start up
 
 In the file: /etc/bluetooth/main.conf change the InitiallyPowered setting to false. It should look like this:
     
