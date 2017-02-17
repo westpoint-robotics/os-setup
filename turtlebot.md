@@ -1,3 +1,5 @@
+#-----Under construction-----
+
 These instructions are for the turtlebot's Acer Aspire E11 laptop and assumes you are starting from the turtlebot disk image found at: http://wiki.ros.org/turtlebot/Tutorials/indigo/ISO%20Installation
 
 #### 1. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
