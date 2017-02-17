@@ -81,4 +81,36 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 ### ROS Kinetic Kame 
 -----------------------------------------------------------------
 
+==========================================================================
+ Turtlebot Player Stage Gazebo
+==========================================================================
+    sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
+
+Copy the map files to ~/stage by:
+mkdir ~/stage
+cp -Rf /opt/ros/kinetic/share/turtlebot_stage/maps/ ~/stage/maps/
+mkdir ~/gazebo
+cp -Rf /opt/ros/kinetic/share/turtlebot_gazebo/worlds/ ~/gazebo/worlds
+    
+
+export TURTLEBOT_STAGE_MAP_FILE=~/stage/maps/maze.yaml
+export TURTLEBOT_STAGE_WORLD_FILE=~/stage/maps/stage/maze.world
+export TURTLEBOT_GAZEBO_WORLD_FILE=~/gazebo/worlds/playground.world
+
+To run player stage 2d simulation:
+roslaunch turtlebot_stage turtlebot_in_stage.launch
+
+To run gazebo 3d simulation, after stopping all the 2d processes:
+    roslaunch turtlebot_gazebo turtlebot_world.launch
+Long delay first time running this. Be patient.
+
+    roslaunch turtlebot_rviz_launchers view_robot.launch
+or
+    roslaunch turtlebot_teleop xbox360_teleop.launch 
+or
+    roslaunch turtlebot_teleop keyboard_teleop.launch
+
+
+
+
 - Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
