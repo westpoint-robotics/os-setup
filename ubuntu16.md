@@ -9,25 +9,22 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - `sudo reboot`
 - *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug affecting multiple users of 15.10 and 16.04 and Ubuntu is working to resolve it.* 
 
-#### 2. Install the classical looking desktop session and switch to metacity on logon:
+#### 2. Install the classical looking desktop session and switch to Metacity on logon:
 - `sudo apt-get install gnome-session-flashback`
 - Then logout, on the login screen click the Ubuntu icon and switch to metacity, log back in.
-- Add icons to the top panel by left-click, drag and drop. Typically do this for terminal, Gedit, Firefox.
-- *REASON: Many Cadets dislike the learning curve and unfamiliar UI associated with Unity. They can very quickly use the classical desktop environments. I have found quite a few Cadets that found Unity to be annoying and no Cadet’s have complained about the usability of the classical desktops. The enhancements offered by Unity provide no value to these projects.*
+- Add icons to the top panel by left-click, drag and drop. Typically do this for Terminal, Gedit, Firefox.
+- *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
 
-#### 3. Change computer name (If the computer name and user name are not already set to the below values):
-- `sudo gedit /etc/hosts`
-- `sudo gedit /etc/hostname`
+#### 3. Instal helper applications
+- `sudo apt-get install meld minicom ant git-core gksu openssh-server`
+
+#### 4. Change computer name (If the computer name and user name are not already set to the below values):
+- `gksu gedit /etc/hosts`
+- `gksu gedit /etc/hostname`
 - Change computer name to roslabxx where xx is the laptop number
 - Set user to 'user1'
 - Assign a password as per the prevailing EECS convention.
 - *REASON: This computer naming convention removed much confusion over computer behavior while communicating over the network and with Robots. The common user name and password has significantly simplified the problem of working on multiple computers. It makes having discussion about "user space" vs "system space" much more clear and easier to relate to material taught in the curriculum.*  
-
-
-#### 4. Create 'cls' command 
-- In order to have a quick way to clear the screen add the below line to ~/.bashrc 
-- alias cls='printf "\033c"'
-- *REASON: Commonly when you build a large application a lot of output is sent to the terminal. It can be difficult to tell when your last build output stopped and the new build began. The 'cls' alias clears the screen and the buffer (unlike the Linux "clear" command). Running 'cls' before a new build allows you to scroll to the top of the buffer to find the start of the output for this build. This is in honor to the old MS-DOS command 'cls' that behaved this way. Having 'cls' on Linux machines may cause some confusion and maybe considered blasphemous by some!*	
 
 #### 5. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
@@ -54,8 +51,10 @@ Below are the setup instructions to follow once you have a clean install of Ubun
  - `sudo adduser user1 dialout`
  - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
 
-#### 10. Instal helper applications
-- `sudo apt-get install meld minicom ant git-core gksu openssh-server`
+#### 10. Create 'cls' command 
+- In order to have a quick way to clear the screen add the below line to ~/.bashrc 
+- alias cls='printf "\033c"'
+- *REASON: Commonly when you build a large application a lot of output is sent to the terminal. It can be difficult to tell when your last build output stopped and the new build began. The 'cls' alias clears the screen and the buffer (unlike the Linux "clear" command). Running 'cls' before a new build allows you to scroll to the top of the buffer to find the start of the output for this build. This is in honor to the old MS-DOS command 'cls' that behaved this way. Having 'cls' on Linux machines may cause some confusion and maybe considered blasphemous by some!*	
 
 #### 11. Firefox Preferences 
 - Under Preferences -> Privacy -> History, select "Never remember history".
@@ -74,8 +73,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 #### 14. Disable bluetooth on start up
 - In the file: /etc/bluetooth/main.conf change the InitiallyPowered setting to false. 
 - It should look like this: InitiallyPowered = false
-- *REASON: We are not using the bluetooth and this conserves battery power. This can be re-enabled through the desktop gui.*
-
+- *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
 
 -----------------------------------------------------------------
 ### ROS Kinetic Kame 
