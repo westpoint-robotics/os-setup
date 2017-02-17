@@ -10,7 +10,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug affecting multiple users of 15.10 and 16.04 and Ubuntu is working to resolve it.* 
 
 #### 2. Install the classical looking desktop session and switch to metacity on logon:
-- `sudo apt-get install gnome-session-fallback`
+- `sudo apt-get install gnome-session-flashback`
 - Then logout, on the login screen click the Ubuntu icon and switch to metacity, log back in.
 - Add icons to the top panel by left-click, drag and drop. Typically do this for terminal, Gedit, Firefox.
 - *REASON: Many Cadets dislike the learning curve and unfamiliar UI associated with Unity. They can very quickly use the classical desktop environments. I have found quite a few Cadets that found Unity to be annoying and no Cadet’s have complained about the usability of the classical desktops. The enhancements offered by Unity provide no value to these projects.*
@@ -81,36 +81,30 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 ### ROS Kinetic Kame 
 -----------------------------------------------------------------
 
-==========================================================================
- Turtlebot Player Stage Gazebo
-==========================================================================
-    sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
-
-Copy the map files to ~/stage by:
-mkdir ~/stage
-cp -Rf /opt/ros/kinetic/share/turtlebot_stage/maps/ ~/stage/maps/
-mkdir ~/gazebo
-cp -Rf /opt/ros/kinetic/share/turtlebot_gazebo/worlds/ ~/gazebo/worlds
-    
-
-export TURTLEBOT_STAGE_MAP_FILE=~/stage/maps/maze.yaml
-export TURTLEBOT_STAGE_WORLD_FILE=~/stage/maps/stage/maze.world
-export TURTLEBOT_GAZEBO_WORLD_FILE=~/gazebo/worlds/playground.world
-
-To run player stage 2d simulation:
-roslaunch turtlebot_stage turtlebot_in_stage.launch
-
-To run gazebo 3d simulation, after stopping all the 2d processes:
-    roslaunch turtlebot_gazebo turtlebot_world.launch
-Long delay first time running this. Be patient.
-
-    roslaunch turtlebot_rviz_launchers view_robot.launch
-or
-    roslaunch turtlebot_teleop xbox360_teleop.launch 
-or
-    roslaunch turtlebot_teleop keyboard_teleop.launch
-
-
-
-
 - Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+
+#### 1. Turtlebot Player Stage Gazebo (Optional)
+
+- `sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers`
+
+- Copy the map files to ~/stage by:
+ - `mkdir ~/stage`
+ - `cp -Rf /opt/ros/kinetic/share/turtlebot_stage/maps/ ~/stage/maps/`
+ - `mkdir ~/gazebo`
+ - `cp -Rf /opt/ros/kinetic/share/turtlebot_gazebo/worlds/ ~/gazebo/worlds`
+ - `export TURTLEBOT_STAGE_MAP_FILE=~/stage/maps/maze.yaml`
+ - `export TURTLEBOT_STAGE_WORLD_FILE=~/stage/maps/stage/maze.world`
+ - `export TURTLEBOT_GAZEBO_WORLD_FILE=~/gazebo/worlds/playground.world`
+
+- To run player stage 2d simulation:
+ - `roslaunch turtlebot_stage turtlebot_in_stage.launch`
+
+- To run gazebo 3d simulation, after stopping all the 2d processes:
+ - `roslaunch turtlebot_gazebo turtlebot_world.launch`
+ - *Be patient!*
+ - `roslaunch turtlebot_rviz_launchers view_robot.launch`
+ - or
+ - `roslaunch turtlebot_teleop xbox360_teleop.launch` 
+ - or
+ - `roslaunch turtlebot_teleop keyboard_teleop.launch`
