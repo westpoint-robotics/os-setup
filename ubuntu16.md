@@ -84,7 +84,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
 
-#### 1. Turtlebot Player Stage Gazebo (Optional)
+##### Turtlebot Player Stage Gazebo (Optional)
 
 - `sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers`
 
