@@ -2,13 +2,20 @@
 
 Below are the setup instructions to follow once you have a clean install of Ubuntu 16.04 
 
-#### 1. Install the classical looking desktop session and switch to metacity on logon:
+#### 1. Modify and Update grub
+- `sudo nano /etc/default/grub`
+- Modify the line GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash intel_idle.max_cstate=1"
+- `sudo update-grub`
+- `sudo reboot`
+- *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug affecting multiple users of 15.10 and 16.04 and Ubuntu is working to resolve it.* 
+
+#### 2. Install the classical looking desktop session and switch to metacity on logon:
 - `sudo apt-get install gnome-session-fallback`
 - Then logout, on the login screen click the Ubuntu icon and switch to metacity, log back in.
 - Add icons to the top panel by left-click, drag and drop. Typically do this for terminal, Gedit, Firefox.
 - *REASON: Many Cadets dislike the learning curve and unfamiliar UI associated with Unity. They can very quickly use the classical desktop environments. I have found quite a few Cadets that found Unity to be annoying and no Cadet’s have complained about the usability of the classical desktops. The enhancements offered by Unity provide no value to these projects.*
 
-#### 2. Change computer name (If the computer name and user name are not already set to the below values):
+#### 3. Change computer name (If the computer name and user name are not already set to the below values):
 - `sudo gedit /etc/hosts`
 - `sudo gedit /etc/hostname`
 - Change computer name to roslabxx where xx is the laptop number
@@ -16,9 +23,6 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Assign a password as per the prevailing EECS convention.
 - *REASON: This computer naming convention removed much confusion over computer behavior while communicating over the network and with Robots. The common user name and password has significantly simplified the problem of working on multiple computers. It makes having discussion about "user space" vs "system space" much more clear and easier to relate to material taught in the curriculum.*  
 
-#### 3. Firefox Preferences 
-- Under Preferences -> Privacy -> History, select "Never remember history".
-- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy. These are great discussions to have with someone learning about computers.* 
 
 #### 4. Create 'cls' command 
 - In order to have a quick way to clear the screen add the below line to ~/.bashrc 
@@ -46,7 +50,6 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Under Preferences -> Editor: Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - *REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation.*
 
-
 #### 9. Allow user1 to dialout on USB devices
  - `sudo adduser user1 dialout`
  - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
@@ -54,15 +57,12 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 #### 10. Instal helper applications
 - `sudo apt-get install meld minicom ant git-core gksu openssh-server`
 
-#### 11. Modify and Update grub
-- `sudo nano /etc/default/grub`
-- Modify the line GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash intel_idle.max_cstate=1"
-- `sudo update-grub`
-- `sudo reboot`
-- *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug affecting multiple users of 15.10 and 16.04 and Ubuntu is working to resolve it.* 
+#### 11. Firefox Preferences 
+- Under Preferences -> Privacy -> History, select "Never remember history".
+- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy. These are great discussions to have with someone learning about computers.* 
 
-#### 12. Scroll bars on side windows
-- Type this ijn the terminal to get the scroll bars to appear:
+#### 12. Scroll bars on the side of windows
+- Type this in the terminal to get the scroll bars to appear:
 - `gsettings set com.canonical.desktop.interface scrollbar-mode normal`
 - *REASON: This are the more familiar scrollbars and make the UI behave as many Cadets would expect it.*
 
@@ -72,17 +72,13 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: The default setting is too small for the number of files that are used in these projects.*
 
 #### 14. Disable bluetooth on start up
-
-In the file: /etc/bluetooth/main.conf change the InitiallyPowered setting to false. It should look like this:
-    
-InitiallyPowered = false
-
-REASON: We are not using the bluetooth and this conserves battery power. This can be re-enabled through the desktop gui.
-
---------
+- In the file: /etc/bluetooth/main.conf change the InitiallyPowered setting to false. 
+- It should look like this: InitiallyPowered = false
+- *REASON: We are not using the bluetooth and this conserves battery power. This can be re-enabled through the desktop gui.*
 
 
 -----------------------------------------------------------------
-ROS Kinetic Kame 
+### ROS Kinetic Kame 
 -----------------------------------------------------------------
 
+- Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
