@@ -79,6 +79,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 ### ROS Kinetic Kame 
 -----------------------------------------------------------------
 
+#### Installation
 - Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
 
