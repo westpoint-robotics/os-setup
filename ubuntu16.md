@@ -104,7 +104,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
  - `roslaunch turtlebot_gazebo turtlebot_world.launch`
  - *Be patient!*
  - `roslaunch turtlebot_rviz_launchers view_robot.launch`
- - or
- - `roslaunch turtlebot_teleop xbox360_teleop.launch` 
- - or
- - `roslaunch turtlebot_teleop keyboard_teleop.launch`
+  or
+  `roslaunch turtlebot_teleop xbox360_teleop.launch` 
+  or
+  `roslaunch turtlebot_teleop keyboard_teleop.launch`
