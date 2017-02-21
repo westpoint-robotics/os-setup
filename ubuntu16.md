@@ -34,9 +34,8 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 
 #### 6. Disable Power Saving
 - Go to System Settings -> All Settings -> Brightness & Lock
-- Click on the padlock to unlock
 - Disabled "Dim screen to save power"
-- Set "Turn screen off when inactive for:"
+- Set "Turn screen off when inactive for: Never"
 
 #### 7. Edit Terminal's Default Profile
 - On the Scrolling tab, check box for "Unlimited scrolling"
