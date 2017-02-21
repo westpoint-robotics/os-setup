@@ -16,7 +16,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
 
 #### 3. Instal helper applications
-- `sudo apt-get install meld minicom ant git-core gksu openssh-server`
+- `sudo apt-get install meld minicom ant git-core gksu openssh-server terminator`
 
 #### 4. Change computer name (If the computer name and user name are not already set to the below values):
 - `gksu gedit /etc/hosts`
@@ -36,14 +36,17 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Go to System Settings -> All Settings -> Brightness & Lock
 - Disabled "Dim screen to save power"
 - Set "Turn screen off when inactive for: Never"
+- *REASON: Almost always, the laptops are placed in docking stations and rarely run low on battery. The auto-lock is more of an inconvenience and may cause errors while in the midst of a critical operation.*
 
 #### 7. Edit Terminal's Default Profile
-- On the Scrolling tab, check box for "Unlimited scrolling"
+- Open Terminal. Click on Edit -> Profile Preferences
+- On the Scrolling tab, uncheck the box "Limit scrollback to:"
 - *REASON: Many times the output to the terminal sent by a build command exceeds this limit. To understand build problems, many times you need to scroll to the beginning of the output. This enables you to scroll back to the beginning of the buffer.*
 
 #### 8. GEDIT Preferences.
-- Open a text file using Gedit 
-- Under Preferences -> Editor: Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
+- Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
+- Click Edit -> Preferences -> Editor. 
+- Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - *REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation.*
 
 #### 9. Allow user1 to dialout on USB devices
@@ -70,8 +73,9 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: The default setting is too small for the number of files that are used in these projects.*
 
 #### 14. Disable bluetooth on start up
-- In the file: /etc/bluetooth/main.conf change the InitiallyPowered setting to false. 
-- It should look like this: InitiallyPowered = false
+- `gksu gedit /etc/rc.local`
+- Add this line before `exit 0`: rfkill block bluetooth
+- You should still be able to enable Bluetooth through the top bar applet.
 - *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
 
 -----------------------------------------------------------------
