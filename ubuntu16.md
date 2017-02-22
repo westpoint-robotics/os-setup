@@ -78,6 +78,11 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - You should still be able to enable Bluetooth through the top bar applet.
 - *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
 
+#### 15. NVIDIA Display Driver
+- System Settings -> Software & Updates -> Additional Drivers
+- Select the NVIDIA driver which is proprietary and tested.
+- *REASON: The default display driver by X.Org has caused frequent screen freezes and bizzare macro blocks to appear. The one by NVIDIA has proven to work without such mishaps.*
+
 -----------------------------------------------------------------
 ### ROS Kinetic Kame 
 -----------------------------------------------------------------
