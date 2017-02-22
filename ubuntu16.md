@@ -83,6 +83,13 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Select the NVIDIA driver which is proprietary and tested.
 - *REASON: The default display driver by X.Org has caused frequent screen freezes and bizzare macro blocks to appear. The one by NVIDIA has proven to work without such mishaps.*
 
+#### 16. Disable automatic updates
+- System Settings -> Software & Updates -> Updates
+- Uncheck 'Unsupported updates'
+- Set 'Automatically check for updates: Never'
+- Set 'When there are other updates: Display every two weeks'
+- *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/CSG/ESG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
+
 -----------------------------------------------------------------
 ### ROS Kinetic Kame 
 -----------------------------------------------------------------
