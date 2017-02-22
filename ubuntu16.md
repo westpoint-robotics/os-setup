@@ -75,12 +75,13 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 #### 14. Disable bluetooth on start up
 - `gksu gedit /etc/rc.local`
 - Add this line before `exit 0`: rfkill block bluetooth
-- You should still be able to enable Bluetooth through the top bar applet.
+- You should still be able to enable Bluetooth through the top bar applet or System Settings.
 - *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
 
 #### 15. NVIDIA Display Driver
 - System Settings -> Software & Updates -> Additional Drivers
 - Select the NVIDIA driver which is proprietary and tested.
+- It takes about 5 minutes for the changes to be applied. Be patient!
 - *REASON: The default display driver by X.Org has caused frequent screen freezes and bizzare macro blocks to appear. The one by NVIDIA has proven to work without such mishaps.*
 
 #### 16. Disable automatic updates
