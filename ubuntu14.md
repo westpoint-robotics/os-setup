@@ -25,7 +25,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
-- * REASON: This makes it much easier to find what was done to the computer in the past. Many of the users on these systems are not familiar with Linux. The ability to search the terminal history for commands and the way it was done last semester has proven valuable, especially at the start of the semester. It has also allowed Faculty to figure out what the users have done on the computer for debugging problems. The long length has proven its value mostly when trying to recreate work done in the previous school year. This justifies a reminder that the work done on these computers is not private.* 	
+- *REASON: This makes it much easier to find what was done to the computer in the past. Many of the users on these systems are not familiar with Linux. The ability to search the terminal history for commands and the way it was done last semester has proven valuable, especially at the start of the semester. It has also allowed Faculty to figure out what the users have done on the computer for debugging problems. The long length has proven its value mostly when trying to recreate work done in the previous school year. This justifies a reminder that the work done on these computers is not private.* 	
 
 #### 5. Disable Power Saving
 - Go to System Settings -> All Settings -> Brightness & Lock
@@ -87,7 +87,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 
 #### 16. Disable the Scroll-wheel click 
 - echo 'xmodmap -e "pointer = 1 9 3 4 5 6 7 8 2"' > ~/.Xmodmap
-- *REASON: Prevent accidental pasting of text from buffer while scrolling through code.
+- *REASON: Prevent accidental pasting of text from buffer while scrolling through code.*
 
 -----------------------------------------------------------------
 ### ROS Indigo Igloo
