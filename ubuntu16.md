@@ -98,9 +98,20 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 #### Installation
 - Follow instructions on [ROS Wiki] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
+#### Install additional tools and drivers(Optional):
+- `sudo apt-get install git-core python-argparse python-wstool python-vcstools python-rosdep ros-kinetic-control-msgs ros-kinetic-joystick-drivers`
 
-##### Turtlebot Player Stage Gazebo (Optional)
+#### Create catkin workspace
+- `mkdir -p ~/catkin_ws/src`
+- `cd ~/catkin_ws/src`
+- `catkin_init_workspace`
+- `cd ~/catkin_ws/`
+- `catkin_make`
+- `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
+- `source $HOME/catkin_ws/devel/setup.bash`
+- `rospack profile`
 
+#### Turtlebot Player Stage Gazebo (Optional)
 - `sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers`
 
 - Copy the map files to ~/stage by:
