@@ -128,7 +128,8 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 -----------------------------------------------------------------
 ### Arduino and ROS_Serial 
 -----------------------------------------------------------------
-- ([Wiki Ref]) (http://wiki.ros.org/rosserial_arduino/Tutorials)
+- [(Wiki Ref)] (http://wiki.ros.org/rosserial_arduino/Tutorials)
+
 #### Download and Install
 - `sudo apt-get update `
 - Arduino IDE: `sudo apt-get install arduino arduino-core`
