@@ -128,7 +128,6 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 -----------------------------------------------------------------
 ### Arduino and ROS_Serial 
 -----------------------------------------------------------------
-- [(Wiki Ref)] (http://wiki.ros.org/rosserial_arduino/Tutorials)
 
 #### Download and Install
 - `sudo apt-get update `
@@ -151,3 +150,4 @@ run the example code and to see results use below:
         rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
     6. In another terminal run - each time you run this it will toggle the light on or off.
         rostopic pub toggle_led std_msgs/Empty --once
+- [(Wiki Ref)] (http://wiki.ros.org/rosserial_arduino/Tutorials)
