@@ -18,8 +18,8 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Add icons to the top panel by left-click, drag and drop. Typically do this for Terminal, Gedit, Firefox.
 - *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
 
-#### 3. Instal helper applications
-- `sudo apt-get install meld minicom ant git-core gksu openssh-server terminator`
+#### 3. Instal helper applications and software
+- `sudo apt-get install meld minicom ant git gksu openssh-server terminator`
 
 #### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
@@ -55,7 +55,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 
 #### 10. Firefox Preferences 
 - Under Preferences -> Privacy -> History, select "Never remember history".
-- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy. These are great discussions to have with someone learning about computers.* 
+- *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy.* 
 
 #### 11. Scroll bars on the side of windows
 - Type this in the terminal to get the scroll bars to appear:
@@ -110,3 +110,17 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - `rospack profile`
     
 #### Turtlebot Player Stage Gazebo (Optional)
+- `sudo apt-get install ros-indigo-turtlebot-stage ros-indigo-turtlebot-navigation ros-indigo-turtlebot-gazebo ros-indigo-turtlebot-apps ros-indigo-turtlebot-rviz-launchers`
+- Copy the map files to ~/stage by:
+ - `mkdir ~/stage`
+ - `cp -Rf /opt/ros/indigo/share/turtlebot_stage/maps/ ~/stage/maps/`
+ - `mkdir ~/gazebo`
+ - `cp -Rf /opt/ros/indigo/share/turtlebot_gazebo/worlds/ ~/gazebo/worlds`
+- `export TURTLEBOT_STAGE_MAP_FILE=~/stage/maps/maze.yaml`
+- `export TURTLEBOT_STAGE_WORLD_FILE=~/stage/maps/stage/maze.world`
+- `export TURTLEBOT_GAZEBO_WORLD_FILE=~/gazebo/worlds/playground.world`
+- To run player stage 2d simultation: `roslaunch turtlebot_stage turtlebot_in_stage.launch`
+- To run gazebo 3d simulation, after stopping all the 2d processess: 
+ - `roslaunch turtlebot_gazebo turtlebot_world.launch`
+ - `roslaunch turtlebot_rviz_launchers view_robot.launch`
+ - `roslaunch turtlebot_teleop xbox360_teleop.launch`
