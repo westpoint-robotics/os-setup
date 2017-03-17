@@ -2,7 +2,7 @@
 
 Below are the setup instructions to follow once you have a clean install of Ubuntu 16.04 
 
-#### 1. Modify and Update grub. *DO THIS ONLY IF YOU FACE ISSUES WITH THE DISPLAY FREEZING* [1](http://askubuntu.com/questions/761706/ubuntu-15-10-and-16-04-keep-freezing-randomly)
+#### 1. Modify and Update grub. *DO THIS ONLY IF YOU FACE ISSUES WITH THE DISPLAY FREEZING* [[1]](http://askubuntu.com/questions/761706/ubuntu-15-10-and-16-04-keep-freezing-randomly)
 - `sudo nano /etc/default/grub`
 - Modify the line GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash intel_idle.max_cstate=1"
 - `sudo update-grub`
@@ -84,7 +84,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - It takes about 5 minutes for the changes to be applied. Be patient!
 - *REASON: The default display driver by X.Org has caused frequent screen freezes and bizzare macro blocks to appear. The one by NVIDIA has proven to work without such mishaps.*
 
-#### 16. Disable Suspend/Hibernate on Lid close [1](http://askubuntu.com/questions/827139/closing-lid-turns-off-external-monitor-on-16-04) [2](http://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid) 
+#### 16. Disable Suspend/Hibernate on Lid close [[1]](http://askubuntu.com/questions/827139/closing-lid-turns-off-external-monitor-on-16-04) [[2]](http://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid) 
 - `gksu gedit /etc/systemd/logind.conf`
 - Uncomment (Remove '#') the line `HandleLidSwitch=suspend` and change it to `HandleLidSwitch=ignore`
 - Uncomment the line `HandleLidSwitchDocked=ignore`.
