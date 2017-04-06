@@ -19,7 +19,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
 
 #### 3. Instal helper applications and software
-- `sudo apt-get install meld minicom ant git gksu openssh-server terminator`
+- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator`
 
 #### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
