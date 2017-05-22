@@ -4,7 +4,10 @@
 
 Below are the setup instructions to follow once you have a clean install of Ubuntu 14.04 
 
-#### 1. Change computer name (If the computer name and user name are not already set to the below values):
+#### 1. Instal helper applications and software
+- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
+
+#### 2. Change computer name (If the computer name and user name are not already set to the below values):
 - `gksu gedit /etc/hosts`
 - `gksu gedit /etc/hostname`
 - Change computer name to roslabxx where xx is the laptop number
@@ -12,14 +15,11 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - Assign a password as per the prevailing EECS convention.
 - *REASON: This computer naming convention removed much confusion over computer behavior while communicating over the network and with Robots. The common user name and password has significantly simplified the problem of working on multiple computers. It makes having discussion about "user space" vs "system space" much more clear and easier to relate to material taught in the curriculum.*  
 
-#### 2. Install the classical looking desktop session and switch to Metacity on logon:
+#### 3. Install the classical looking desktop session and switch to Metacity on logon:
 - `sudo apt-get install gnome-session-flashback`
 - Then logout, on the login screen click the Ubuntu icon and switch to metacity, log back in.
 - Add icons to the top panel by left-click, drag and drop. Typically do this for Terminal, Gedit, Firefox.
 - *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
-
-#### 3. Instal helper applications and software
-- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator`
 
 #### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
