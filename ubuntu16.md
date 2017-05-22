@@ -16,7 +16,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
 
 #### 3. Instal helper applications
-- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator`
+- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
 
 #### 4. Change computer name (If the computer name and user name are not already set to the below values):
 - `gksu gedit /etc/hosts`
