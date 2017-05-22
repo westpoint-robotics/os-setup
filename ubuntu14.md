@@ -94,7 +94,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 -----------------------------------------------------------------
 
 #### Installation
-- Follow instructions on [ROS Wiki] (http://wiki.ros.org/indigo/Installation/Ubuntu)
+- Follow instructions on [ROS Wiki](http://wiki.ros.org/indigo/Installation/Ubuntu)
 
 #### Install additional tools and drivers(Optional):
 - `sudo apt-get install git-core python-argparse python-wstool python-vcstools python-rosdep ros-indigo-control-msgs ros-indigo-joystick-drivers`
@@ -150,4 +150,4 @@ run the example code and to see results use below:
         rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
     6. In another terminal run - each time you run this it will toggle the light on or off.
         rostopic pub toggle_led std_msgs/Empty --once
-- [(Wiki Ref)](http://wiki.ros.org/rosserial_arduino/Tutorials)
+- [Wiki Ref](http://wiki.ros.org/rosserial_arduino/Tutorials)
