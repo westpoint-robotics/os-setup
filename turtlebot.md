@@ -73,7 +73,7 @@
 - OpenNI tries to set the USB async thread priority to critical. This works on Linux only with root privileges. For a normal user, the program will throw this warning. Currently we ignore this warining.
 - CURRENT SOLUTION: Ignore the USB events thread warning.
 ----------------------------
-#### Turtlebot Player Stage Gazebo (Optional)
+### Turtlebot Player Stage Gazebo (Optional)
 - `sudo apt-get install ros-indigo-turtlebot-stage ros-indigo-turtlebot-navigation ros-indigo-turtlebot-gazebo ros-indigo-turtlebot-apps ros-indigo-turtlebot-rviz-launchers`
 - Copy the map files to ~/stage by:
  - `mkdir ~/stage`
