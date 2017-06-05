@@ -8,5 +8,6 @@ Directions for customizing Operating System after basic install. (For faculty an
 
 #### 1. [Ubuntu 16.04 LTS and ROS Kinetic](https://github.com/westpoint-robotics/os-setup/blob/master/ubuntu16.md)
 #### 2. [Ubuntu 14.04 LTS and ROS Indigo](https://github.com/westpoint-robotics/os-setup/blob/master/ubuntu14.md)
-#### 3. [Turtlebot laptop](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot.md)
-#### 4. [Useful bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
+#### 3. [Turtlebot laptop (Acer Aspire E11)](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_acer.md)
+#### 4. [Turtlebot laptop (Dell Latitude E7270)](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_dell.md)
+#### 5. [Useful bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
