@@ -1,5 +1,3 @@
-# ----- Under Construction -----
-
 ## For Ubuntu 14.04 LTS 
 
 Below are the setup instructions to follow once you have a clean install of Ubuntu 14.04 
@@ -108,22 +106,7 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 - `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
 - `source $HOME/catkin_ws/devel/setup.bash`
 - `rospack profile`
-    
-#### Turtlebot Player Stage Gazebo (Optional)
-- `sudo apt-get install ros-indigo-turtlebot-stage ros-indigo-turtlebot-navigation ros-indigo-turtlebot-gazebo ros-indigo-turtlebot-apps ros-indigo-turtlebot-rviz-launchers`
-- Copy the map files to ~/stage by:
- - `mkdir ~/stage`
- - `cp -Rf /opt/ros/indigo/share/turtlebot_stage/maps/ ~/stage/maps/`
- - `mkdir ~/gazebo`
- - `cp -Rf /opt/ros/indigo/share/turtlebot_gazebo/worlds/ ~/gazebo/worlds`
-- `export TURTLEBOT_STAGE_MAP_FILE=~/stage/maps/maze.yaml`
-- `export TURTLEBOT_STAGE_WORLD_FILE=~/stage/maps/stage/maze.world`
-- `export TURTLEBOT_GAZEBO_WORLD_FILE=~/gazebo/worlds/playground.world`
-- To run player stage 2d simultation: `roslaunch turtlebot_stage turtlebot_in_stage.launch`
-- To run gazebo 3d simulation, after stopping all the 2d processess: 
- - `roslaunch turtlebot_gazebo turtlebot_world.launch`
- - `roslaunch turtlebot_rviz_launchers view_robot.launch`
- - `roslaunch turtlebot_teleop xbox360_teleop.launch`
+  
 
 -----------------------------------------------------------------
 ### Arduino and ROS_Serial 
