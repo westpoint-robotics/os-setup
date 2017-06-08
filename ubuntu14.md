@@ -113,24 +113,23 @@ Below are the setup instructions to follow once you have a clean install of Ubun
 -----------------------------------------------------------------
 
 #### Download and Install
+#### Arduino IDE
 - `sudo apt-get update `
 - Arduino IDE: `sudo apt-get install arduino arduino-core`
 - Open the IDE by clicking on Applications -> Programming -> Arduino IDE
 - Close the Arduino IDE. This will create the directory structure needed to continue.
-- ROS Serial: `sudo apt-get install ros-indigo-rosserial-arduino ros-indigo-rosserial`
+#### ROS Serial
+- `sudo apt-get install ros-indigo-rosserial-arduino ros-indigo-rosserial`
 - `cd ~/sketchbook/libraries`
 - `rm -rf ros_lib`
 - `rosrun rosserial_arduino make_libraries.py .`
 - `sudo apt-get purge brltty`
-
-run the example code and to see results use below:
-    1. Go to Applications|Programming|Arduino IDE
-    2. In Arduino IDE choose File|Examples|ros_lib|blink
-    3. In Arduino IDE choose Tools|Serial Port|/dev/TTYACM0
-    4. In Arduino IDE choose upload
-    5. In a terminal run
-        roscore &
-        rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
-    6. In another terminal run - each time you run this it will toggle the light on or off.
-        rostopic pub toggle_led std_msgs/Empty --once
-- [Wiki Ref](http://wiki.ros.org/rosserial_arduino/Tutorials)
+- Run the example sketch-
+  - Go to Applications -> Programming -> Arduino IDE
+  - File -> Examples -> ros_lib -> blink
+  - Tools -> Serial Port -> /dev/TTYACM0
+  - Click on 'upload'
+  - Open a terminal and run `roscore &` and `rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0`
+  - In another terminal run `rostopic pub toggle_led std_msgs/Empty --once`. Each time you run this it will toggle the light on or off.
+        
+- ROS Serial [Wiki](http://wiki.ros.org/rosserial_arduino/Tutorials)
