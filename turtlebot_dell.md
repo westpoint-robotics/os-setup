@@ -53,8 +53,18 @@
 - Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
 - Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
 - Plug the camera back and it should run with the ROS packages now.
+----------------------------
+#### 12. Install [GIMP](https://www.gimp.org/) (Optional)
+- `sudo add-apt-repository ppa:otto-kesselgulasch/gimp`
+- `sudo apt-get update`
+- `sudo apt-get install gimp`
 -----------------------------
-#### 12. Disable automatic updates
+#### 13. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
+- `sudo add-apt-repository ppa:webupd8team/sublime-text-2`
+- `sudo apt-get update`
+- `sudo apt-get install sublime-text`
+-----------------------------
+#### 14. Disable automatic updates
 - System Settings -> Software & Updates -> Updates
 - Uncheck 'Unsupported updates'
 - Set 'Automatically check for updates: Never'
