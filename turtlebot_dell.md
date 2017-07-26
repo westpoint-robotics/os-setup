@@ -48,7 +48,7 @@
 - Change the InitiallyPowered setting to false.
 - *REASON: We often do not use bluetooth and can conserve battery power. This can still be re-enabled through the desktop gui.*
 ----------------------------
-#### 11. Orbbec Astra RGB-D camera [ref](http://wiki.ros.org/astra_camera)
+#### 11. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
 - `sudo gedit /etc/udev/rules.d/56-orbbec.rules`
 - Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
 - Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
