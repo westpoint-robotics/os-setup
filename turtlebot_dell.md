@@ -1,5 +1,5 @@
 # ----- Under Construction -----
-### These instructions are for the turtlebot's Dell Latitude E7270 laptop and assumes you have a installed Ubuntu 16.04 LTS
+### These instructions are for the turtlebot's Dell Latitude E7270 laptop and assumes you have installed Ubuntu 16.04 LTS
 
 #### 1. Instal helper applications and software
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
@@ -48,14 +48,21 @@
 - Change the InitiallyPowered setting to false.
 - *REASON: We often do not use bluetooth and can conserve battery power. This can still be re-enabled through the desktop gui.*
 ----------------------------
-#### 11. Disable automatic updates
+#### 11. Orbbec Astra RGB-D camera [ref](http://wiki.ros.org/astra_camera)
+- `sudo gedit /etc/udev/rules.d/56-orbbec.rules`
+- Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
+- Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
+- Plug the camera back and it should run with the ROS packages now.
+-----------------------------
+#### 12. Disable automatic updates
 - System Settings -> Software & Updates -> Updates
 - Uncheck 'Unsupported updates'
 - Set 'Automatically check for updates: Never'
 - Set 'When there are other updates: Display every two weeks'
 - *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/CSG/ESG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
-
 ----------------------------
+
+
 ### Turtlebot Player Stage Gazebo (Optional)
 - `sudo apt-get install ros-indigo-turtlebot-stage ros-indigo-turtlebot-navigation ros-indigo-turtlebot-gazebo ros-indigo-turtlebot-apps ros-indigo-turtlebot-rviz-launchers`
 - Copy the map files to ~/stage by:
