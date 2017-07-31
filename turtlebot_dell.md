@@ -1,7 +1,10 @@
 # ----- Under Construction -----
-### These instructions are for the turtlebot's Dell Latitude E7270 laptop and assumes you have installed Ubuntu 16.04 LTS
+### These instructions are for the Dell Latitude E7270 laptop and assumes you have installed [Ubuntu 16.04 LTS](http://releases.ubuntu.com/16.04/)
 
-#### 1. Instal helper applications and software
+#### 0. Install ROS Kinetic Kame
+- Follow instructions on the [ROS Wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu) for a full-desktop install.
+----------------------------
+#### 1. Install helper applications and software
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
 ----------------------------
 #### 2. Extend length of History
