@@ -30,50 +30,51 @@
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - *REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation.*
 ----------------------------
-#### 6. Allow user1 to dialout on USB devices
- - `sudo adduser user1 dialout`
- - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
- ----------------------------
-#### 7. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
-- `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
-----------------------------
-#### 8. Firefox Preferences 
+#### 6. Firefox Preferences 
 - Under Preferences -> Privacy -> History, select "Never remember history".
 - *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy.* 
 ----------------------------
-#### 9. Scroll bars on the side of windows
+#### 7. Scroll bars on the side of windows
 - Type this in the terminal to get the scroll bars to appear:
 - `gsettings set com.canonical.desktop.interface scrollbar-mode normal`
 - *REASON: This are the more familiar scrollbars and make the UI behave as many Cadets would expect it.*
 ----------------------------
-#### 10. Disable bluetooth on start-up
+#### 8. Disable bluetooth on start-up
 - `gksu gedit /etc/bluetooth/main.conf`
 - Change the InitiallyPowered setting to false.
 - *REASON: We often do not use bluetooth and can conserve battery power. This can still be re-enabled through the desktop gui.*
 ----------------------------
-#### 11. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
-- `sudo gedit /etc/udev/rules.d/56-orbbec.rules`
-- Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
-- Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
-- Plug the camera back and it should run with the ROS packages now.
-----------------------------
-#### 12. Install [GIMP](https://www.gimp.org/) (Optional)
-- `sudo add-apt-repository ppa:otto-kesselgulasch/gimp`
-- `sudo apt-get update`
-- `sudo apt-get install gimp`
------------------------------
-#### 13. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
-- `sudo add-apt-repository ppa:webupd8team/sublime-text-2`
-- `sudo apt-get update`
-- `sudo apt-get install sublime-text`
------------------------------
-#### 14. Disable automatic updates
+#### 9. Allow user1 to dialout on USB devices
+ - `sudo adduser user1 dialout`
+ - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
+ ----------------------------
+ #### 10. Disable automatic updates
 - System Settings -> Software & Updates -> Updates
 - Uncheck 'Unsupported updates'
 - Set 'Automatically check for updates: Never'
 - Set 'When there are other updates: Display every two weeks'
 - *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/CSG/ESG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
 ----------------------------
+#### 11. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
+- `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
+----------------------------
+#### 12. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
+- `sudo gedit /etc/udev/rules.d/56-orbbec.rules`
+- Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
+- Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
+- Plug the camera back and it should run with the ROS packages now.
+----------------------------
+#### 13. Install [GIMP](https://www.gimp.org/) (Optional)
+- `sudo add-apt-repository ppa:otto-kesselgulasch/gimp`
+- `sudo apt-get update`
+- `sudo apt-get install gimp`
+-----------------------------
+#### 14. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
+- `sudo add-apt-repository ppa:webupd8team/sublime-text-2`
+- `sudo apt-get update`
+- `sudo apt-get install sublime-text`
+-----------------------------
+
 
 
 ### Turtlebot Player Stage Gazebo (Optional)
