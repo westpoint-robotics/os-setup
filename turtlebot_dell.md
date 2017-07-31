@@ -1,75 +1,87 @@
 # ----- Under Construction -----
 ### These instructions are for the Dell Latitude E7270 laptop and assumes you have installed [Ubuntu 16.04 LTS](http://releases.ubuntu.com/16.04/)
 
-#### 0. Install ROS Kinetic Kame
+#### 1. Install ROS Kinetic Kame
 - Follow instructions on the [ROS Wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu) for a full-desktop install.
 ----------------------------
-#### 1. Install helper applications and software
+#### 2. Install helper applications and software
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
 ----------------------------
-#### 2. Extend length of History
+#### 3. Install the classical looking desktop session and switch to Metacity on logon:
+- `sudo apt-get install gnome-session-flashback`
+- Then logout, on the login screen click the Ubuntu icon and switch to metacity, log back in.
+- Add icons to the top panel by left-click, drag and drop. Typically do this for Terminal, Gedit, Firefox.
+- *REASON: Many Cadets dislike the learning curve associated with unfamiliar UI of Unity. They can easily transition to using the classical desktop environment. The enhancements offered by Unity provide no value to our projects.*
+----------------------------
+#### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
 - *REASON: This makes it much easier to find what was done to the computer in the past. Many of the users on these systems are not familiar with Linux. The ability to search the terminal history for commands and the way it was done last semester has proven valuable, especially at the start of the semester. It has also allowed Faculty to figure out what the users have done on the computer for debugging problems. The long length has proven its value mostly when trying to recreate work done in the previous school year. This justifies a reminder that the work done on these computers is not private.*
 ----------------------------
-#### 3. Disable Power Saving
+#### 5. Disable Power Saving
 - Go to System Settings -> All Settings -> Brightness & Lock
 - Disabled "Dim screen to save power"
 - Set "Turn screen off when inactive for: Never"
 - *REASON: Almost always, the laptops are placed in docking stations and rarely run low on battery. The auto-lock is more of an inconvenience and may cause errors while in the midst of a critical operation.*
 ----------------------------
-#### 4. Edit Terminal's Default Profile
+#### 6. Disable bluetooth on start up
+- `gksu gedit /etc/rc.local`
+- Add this line before `exit 0`: rfkill block bluetooth
+- You should still be able to enable Bluetooth through the top bar applet or System Settings.
+- *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
+----------------------------
+#### 7. Edit Terminal's Default Profile
 - Open Terminal. Click on Edit -> Profile Preferences
 - On the Scrolling tab, uncheck the box "Limit scrollback to:"
 - *REASON: Many times the output to the terminal sent by a build command exceeds this limit. To understand build problems, many times you need to scroll to the beginning of the output. This enables you to scroll back to the beginning of the buffer.*
 ----------------------------
-#### 5. GEDIT Preferences.
+#### 8. GEDIT Preferences.
 - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
 - Click Edit -> Preferences -> Editor. 
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - *REASON: The default 8 spaces per tab makes reading source code difficult. 4 spaces is an acceptable convention used by industry. Changing tabs to spaces as a convention is helpful when programming in Python or any other language that relies on indentation.*
 ----------------------------
-#### 6. Firefox Preferences 
+#### 9. Firefox Preferences 
 - Under Preferences -> Privacy -> History, select "Never remember history".
 - *REASON: With everyone using a common login name, this reduces the likelihood that a person remains logged in to a website in Firefox after closing Firefox. This prevents the problem of opening Firefox and navigating to Gmail to find someone else's email account is already logged on. The Cadets should be told these computers are not for personal usage and that they should not expect privacy on these computers. Logging into personal online accounts is acceptable but they need to be aware of the limits to their privacy.* 
 ----------------------------
-#### 7. Scroll bars on the side of windows
+#### 10. Scroll bars on the side of windows
 - Type this in the terminal to get the scroll bars to appear:
 - `gsettings set com.canonical.desktop.interface scrollbar-mode normal`
 - *REASON: This are the more familiar scrollbars and make the UI behave as many Cadets would expect it.*
 ----------------------------
-#### 8. Disable bluetooth on start-up
+#### 11. Disable bluetooth on start-up
 - `gksu gedit /etc/bluetooth/main.conf`
 - Change the InitiallyPowered setting to false.
 - *REASON: We often do not use bluetooth and can conserve battery power. This can still be re-enabled through the desktop gui.*
 ----------------------------
-#### 9. Allow user1 to dialout on USB devices
+#### 12. Allow user1 to dialout on USB devices
  - `sudo adduser user1 dialout`
  - *REASON: This allows user1 to read and write to most serial devices such as USB. Most robotics projects require this.*
  ----------------------------
- #### 10. Disable automatic updates
+ #### 13. Disable automatic updates
 - System Settings -> Software & Updates -> Updates
 - Uncheck 'Unsupported updates'
 - Set 'Automatically check for updates: Never'
 - Set 'When there are other updates: Display every two weeks'
 - *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/CSG/ESG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
 ----------------------------
-#### 11. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
+#### 14. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
 - `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
 ----------------------------
-#### 12. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
+#### 15. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
 - `sudo gedit /etc/udev/rules.d/56-orbbec.rules`
 - Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
 - Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
 - Plug the camera back and it should run with the ROS packages now.
 ----------------------------
-#### 13. Install [GIMP](https://www.gimp.org/) (Optional)
+#### 16. Install [GIMP](https://www.gimp.org/) (Optional)
 - `sudo add-apt-repository ppa:otto-kesselgulasch/gimp`
 - `sudo apt-get update`
 - `sudo apt-get install gimp`
 -----------------------------
-#### 14. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
+#### 17. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
 - `sudo add-apt-repository ppa:webupd8team/sublime-text-2`
 - `sudo apt-get update`
 - `sudo apt-get install sublime-text`
