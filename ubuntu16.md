@@ -141,3 +141,12 @@ Below are the setup instructions to follow once you have a clean install of Ubun
   `roslaunch turtlebot_teleop xbox360_teleop.launch` 
   or
   `roslaunch turtlebot_teleop keyboard_teleop.launch`
+  
+-----------------------------------------------------------------
+#### Remote Desktop (Optional) 
+-----------------------------------------------------------------
+ 1. [VNC](https://www.linode.com/docs/applications/remote-desktop/install-vnc-on-ubuntu-16-04)
+ 2. [VNC](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04)
+ 3. [VNC](http://www.krizna.com/ubuntu/enable-remote-desktop-ubuntu-16-04-vnc/)
+ 4. [XRDP](https://askubuntu.com/questions/746303/how-to-remote-into-16-04-via-rdp)
+
