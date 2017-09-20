@@ -41,5 +41,3 @@ Below is a list of simple ROS(Indigo Igloo) commands with a description on their
 
 4. [roswtf](http://wiki.ros.org/ROS/Tutorials/Getting%20started%20with%20roswtf)
 - This is THE debugging tool in ROS. roswtf will scan your packages, environment, and configurations and come up with every possible reason why your program might not be working.  It is a bit of an information overload, but with patience you can find most of the flaws using this tool.
-
-//Pratheek 09/18/17
