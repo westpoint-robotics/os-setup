@@ -1,6 +1,6 @@
 # ROS Commands Summary
-If you are looking for a consolidated 'Cheat Sheet', the pdf is [here](https://github.com/westpoint-robotics/os-setup/blob/master/ROScheatsheet.pdf).
-Below are a list of simple ROS(Indigo Igloo) commands with a description on their function.
+If you are looking for a comprehensive 'Cheat Sheet' of all the commands, the pdf is [here](https://github.com/westpoint-robotics/os-setup/blob/master/ROScheatsheet.pdf).
+Below is a list of simple ROS(Indigo Igloo) commands with a description on their function.
 
 ### Setting up your environment
 - You must [setup your environment](http://wiki.ros.org/ROS/Tutorials/MultipleMachines) to use ROS on multiple machines.
