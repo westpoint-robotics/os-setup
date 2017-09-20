@@ -1,4 +1,5 @@
 # ROS Commands Summary
+If you are looking for a consolidated 'Cheat Sheet', the pdf is [here](https://github.com/westpoint-robotics/os-setup/blob/master/ROScheatsheet.pdf).
 Below are a list of simple ROS(Indigo Igloo) commands with a description on their function.
 
 ### Setting up your environment
@@ -24,7 +25,7 @@ Below are a list of simple ROS(Indigo Igloo) commands with a description on thei
 3. roslaunch : Roslaunch is used to start a group of nodes with specific topics and parameters. It first checks for a roscore also known as the ros master and checks to see if it is running. Roslaunch will start roscore if one is not found. Then the Launch file runs all of the nodes within the launch file. See also [http://wiki.wpi.edu/robotics/ROS_File_Types ROS Launch File type]
 - `roslaunch <launch folder or package name> <launch file>`
 
-### Inspecting Running Programs
+### Inspecting & Running Programs
 1. rostopic 
 :> list: shows current ROS topics.
 :> info <topic name>: shows the nodes connected to the given topic.
@@ -32,15 +33,15 @@ Below are a list of simple ROS(Indigo Igloo) commands with a description on thei
 :> pub <topic name> <ROS message type> [<arg2>, <arg3>, ...]: publishes the given data on the given topic.
  rostopic [list, info, echo, pub, ...]
 
-;rosservice
+2. rosservice
 :> list: show current ROS services
 :> call <topic name> <ROS service type> [<arg2>, <arg3>, ...]: make a service call to the given topic using the given service type.
  rosservice [list, call, ...]
 
-;rosnode
+3. rosnode
 :If you are not sure if your node has initialized properly, or is subscribing/publishing to a topic you think it should be, you can use this tool to examine it.  This tool will also show you all active nodes, so if your node has died you can find out by using this.
 
-;roswtf ([http://wiki.ros.org/ROS/Tutorials/Getting%20started%20with%20roswtf Tutorial])
+4. [roswtf](http://wiki.ros.org/ROS/Tutorials/Getting%20started%20with%20roswtf)
 :This is THE debugging tool in ROS. roswtf will scan your packages, environment, and configurations and come up with every possible reason why your program might not be working.  It is a bit of an information overload, but with patience you can find most of the flaws using this tool.
 
 //Pratheek 09/18/17
