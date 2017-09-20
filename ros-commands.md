@@ -26,13 +26,13 @@ Below are a list of simple ROS(Indigo Igloo) commands with a description on thei
 - `roslaunch <launch folder or package name> <launch file>`
 
 ### Inspecting & Troubleshooting 
-1. rostopic 
+1. rostopic ...
 - `list` : shows current ROS topics.
 - `info <topic name>` : shows the nodes connected to the given topic.
 - `echo <topic name>` : displays the raw data being sent on the given topic.
 - `pub <topic name> <ROS message type> [<arg2>, <arg3>, ...]` : publishes the given data on the given topic.
 
-2. rosservice
+2. rosservice ...
 - `list` : show current ROS services
 - `call <topic name> <ROS service type> [<arg2>, <arg3>, ...]` : make a service call to the given topic using the given service type.
 
