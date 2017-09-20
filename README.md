@@ -11,3 +11,4 @@ Directions for customizing Operating System after basic install. (For faculty an
 #### 3. [Turtlebot laptop (Acer Aspire E11)](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_acer.md)
 #### 4. [RRC Laptop (Dell Latitude E7270)](https://github.com/westpoint-robotics/os-setup/blob/master/rrc_e7270.md)
 #### 5. [Archive of bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
+#### 6. [ROS Commands Summary](https://github.com/westpoint-robotics/os-setup/blob/master/ros-commands.md)
