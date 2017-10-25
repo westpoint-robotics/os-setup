@@ -60,13 +60,19 @@
 - Set 'When there are other updates: Display every two weeks'
 - *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/CSG/ESG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
 ----------------------------
-#### 12. Install [GIMP](https://www.gimp.org/) (Optional)
+#### 12. Change screen lock timeout
+- System Settings -> Brightness & Lock
+- Turn screen off when inactive for: `1 hour`
+- Lock screen after: `screen turns off`
+- Check box for requiring password on wake up.
+----------------------------
+#### 13. Install [GIMP](https://www.gimp.org/) (Optional)
 - `sudo add-apt-repository ppa:otto-kesselgulasch/gimp`
 - `sudo apt-get update`
 - `sudo apt-get install gimp`
 - *REASON: Computer vision projects could use this as an image manipulation tool.*
 -----------------------------
-#### 13. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
+#### 14. Install [Sublime 2](https://www.sublimetext.com/) text editor (Optional)
 - `sudo add-apt-repository ppa:webupd8team/sublime-text-2`
 - `sudo apt-get update`
 - `sudo apt-get install sublime-text`
