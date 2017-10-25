@@ -92,7 +92,7 @@
 - `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
 - `source $HOME/catkin_ws/devel/setup.bash`
 - `rospack profile`
-  -----------------------------
+-----------------------------
  #### Display Git-branch in command line prompt (Optional)
 - Copy and paste the following lines into the ~/.bashrc file
 ```
