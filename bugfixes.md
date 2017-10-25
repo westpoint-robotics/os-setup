@@ -5,6 +5,13 @@
   - Solution: Open the terminal and run `sudo gsettings set org.gnome.settings-daemon.plugins.background active true`
 - Sympton 2: Desktop icons are not shown on the desktop and right-clicking on the desktop has no effect.
   - Solution: `sudo gsettings set org.gnome.desktop.background show-desktop-icons true`
+- Symptom 3: Display freezes and only option is to perform a hard shutdown.
+  - Solution: Modify and Update grub. *DO THIS ONLY IF YOU FACE ISSUES WITH THE DISPLAY FREEZING*[[1]](http://askubuntu.com/questions/761706/ubuntu-15-10-and-16-04-keep-freezing-randomly)
+  - `sudo nano /etc/default/grub`
+  - Modify the line GRUB_CMDLINE_LINUX_DEFAULT = "quiet splash intel_idle.max_cstate=1"
+  - `sudo update-grub`
+  - `sudo reboot`
+  - *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug in the display driver affecting multiple users of 15.10 & 16.04. Ubuntu is working to resolve it.* 
 
 #### Category 2: Networking
 - Sympton 1: Wireless adapter does not get enabled on boot-up. This occured after computer wakes from syspend mode or when it is improperly restarted. Toggling the hardware radio switch has no effect.
