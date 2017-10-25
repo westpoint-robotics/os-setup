@@ -12,7 +12,13 @@
   - `sudo update-grub`
   - `sudo reboot`
   - *REASON: This is to prevent the screen from freezing after a few minutes of inactivity. This problem was faced multiple times during installation and the computer had to be hard rebooted in order to recover. This seems to be a major bug in the display driver affecting multiple users of 15.10 & 16.04. Ubuntu is working to resolve it.* 
-
+- Symptom 4: Suspend/Hibernate on Lid close [[1]](http://askubuntu.com/questions/827139/closing-lid-turns-off-external-monitor-on-16-04) [[2]](http://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid) 
+  - Solution : 
+   - `gksu gedit /etc/systemd/logind.conf`
+   - Uncomment (Remove '#') the line `HandleLidSwitch=suspend` and change it to `HandleLidSwitch=ignore`
+   - Uncomment the line `HandleLidSwitchDocked=ignore`.
+   - Save, exit and reboot.
+   - *REASON: On some machines, the computer suspends on closing the lid. This is inspite of changing the settings in 'System Settings -> Power -> 'Do nothing when lid is closed'. Found this work around to be useful when using multiple displays through a docking station. The systems suspends soon after boot-up by detecting that the lid is closed, before it detects the secondary displays.*
 #### Category 2: Networking
 - Sympton 1: Wireless adapter does not get enabled on boot-up. This occured after computer wakes from syspend mode or when it is improperly restarted. Toggling the hardware radio switch has no effect.
   - `rfkill unblock all` OR
