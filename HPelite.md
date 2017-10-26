@@ -1,6 +1,5 @@
 ### These instructions are for the HP Elite desktop computers in RRC laboratories and assumes you have installed [Ubuntu 16.04 LTS](http://releases.ubuntu.com/16.04/)
 ----------------------------
-
 #### 1. Install helper applications and software
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted`
 ----------------------------
@@ -13,8 +12,8 @@
 #### 3. Change computer name (If the computer name and user name are not already set to the below values):
 - `gksu gedit /etc/hosts`
 - `gksu gedit /etc/hostname`
-- Change computer name to rosxxx (or the prevailing convention) where xx is the laptop number
-- Set user to 'user1' or 'rrc'
+- Change computer name to 1138-xx (or the respective room number) where xx is the destop number
+- Set user to 'rrc'
 - Assign a password as per the prevailing EECS convention.
 - *REASON: This computer naming convention removed much confusion over computer behavior while communicating over the network and with Robots. The common user name and password has significantly simplified the problem of working on multiple computers. It makes having discussion about "user space" vs "system space" much more clear and easier to relate to material taught in the curriculum.*  
 ----------------------------
