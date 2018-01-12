@@ -59,25 +59,13 @@
 - Set 'When there are other updates: Display every two weeks'
 - *REASON: Certain unsupported updates cause unwarranted errors and discrepancies. The cadets usually wont track the updates they've applied. Its best for the system admin (OIC/RRC/CSG) to manually update the laptop before handing out to cadets. Cadets can always use `sudo apt-get update` if requrired.*
 ----------------------------
-#### 12. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
-- `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
-----------------------------
-#### 13. Fixed joystick conflict.
-- This conflict is caused becuase the joy node default joystick device location is at `/dev/input/js0` but the Acer Laptop maps its accelrometer to `js0`. Now when the xbox controller is plugged in it becomes `/dev/input/js1`. To solve this, edit the `xbox360_teleop.launch` file by running this command:
-- `sudo sed -i '18i \ \ <param name="joystick/dev" value="/dev/input/js1"/>'  /opt/ros/indigo/share/turtlebot_teleop/launch/xbox360_teleop.launch`
-----------------------------
-#### 14. USB Warning
--  The following warning appears upon starting the xtion sensor: `Warning: USB events thread - failed to set priority. This might cause loss of data...`
-- OpenNI tries to set the USB async thread priority to critical. This works on Linux only with root privileges. For a normal user, the program will throw this warning. Currently we ignore this warining.
-- CURRENT SOLUTION: Ignore the USB events thread warning.
-----------------------------
-#### 15. Install ROS Kinetic Kame
+#### 12. Install ROS Kinetic Kame
 - Follow instructions on the [ROS Wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu) for a full-desktop install.
 -----------------------------
-#### 16. Install additional tools
+#### 13. Install additional tools
 - `sudo apt-get install git-core python-argparse python-wstool python-vcstools python-rosdep ros-kinetic-control-msgs ros-kinetic-joystick-drivers`
 -----------------------------
-#### 17. Create catkin workspace
+#### 14. Create catkin workspace
 - `mkdir -p ~/catkin_ws/src`
 - `cd ~/catkin_ws/src`
 - `catkin_init_workspace`
@@ -87,9 +75,21 @@
 - `source $HOME/catkin_ws/devel/setup.bash`
 - `rospack profile`
 -----------------------------
-### 18. Turtlebot
+#### 15. Turtlebot
 - `sudo apt-get install ros-kinetic-turtlebot*`
 - If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation). These commands were framed for Indigo. Hence you'll have to change the distro names in all the commands to 'kinetic'.
+----------------------------
+#### 16. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
+- `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
+----------------------------
+#### 17. Fixed joystick conflict.
+- This conflict is caused becuase the joy node default joystick device location is at `/dev/input/js0` but the Acer Laptop maps its accelrometer to `js0`. Now when the xbox controller is plugged in it becomes `/dev/input/js1`. To solve this, edit the `xbox360_teleop.launch` file by running this command:
+- `sudo sed -i '18i \ \ <param name="joystick/dev" value="/dev/input/js1"/>'  /opt/ros/indigo/share/turtlebot_teleop/launch/xbox360_teleop.launch`
+----------------------------
+#### 18. USB Warning
+-  The following warning appears upon starting the xtion sensor: `Warning: USB events thread - failed to set priority. This might cause loss of data...`
+- OpenNI tries to set the USB async thread priority to critical. This works on Linux only with root privileges. For a normal user, the program will throw this warning. Currently we ignore this warining.
+- CURRENT SOLUTION: Ignore the USB events thread warning.
 -----------------------------
 #### 19. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
 - Plug in the camera and let the drivers auto-install
