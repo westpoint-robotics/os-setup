@@ -15,11 +15,12 @@
 - HISTFILESIZE=200000
 - *REASON: This makes it much easier to find what was done to the computer in the past. Many of the users on these systems are not familiar with Linux. The ability to search the terminal history for commands and the way it was done last semester has proven valuable, especially at the start of the semester. It has also allowed Faculty to figure out what the users have done on the computer for debugging problems. The long length has proven its value mostly when trying to recreate work done in the previous school year. This justifies a reminder that the work done on these computers is not private.*
 ----------------------------
-#### 4. Disable Power Saving
+#### 4. Modify Power Saving
 - Go to System Settings -> All Settings -> Brightness & Lock
-- Disabled "Dim screen to save power"
-- Set "Turn screen off when inactive for: Never"
-- *REASON: Almost always, the laptops are placed in docking stations and rarely run low on battery. The auto-lock is more of an inconvenience and may cause errors while in the midst of a critical operation.*
+- Check 'Dim screen to save power'
+- Set "Turn screen off when inactive for: 1 hour"
+- Disable screen lock
+- *REASON: Almost always, these laptops are placed on the turtlebots and may not connected to a power source. Hence the need to conserve battery. The auto-lock is more of an inconvenience and may cause errors while in the midst of a critical operation.*
 ----------------------------
 #### 5. Disable bluetooth on start-up
 - `gksu gedit /etc/bluetooth/main.conf`
