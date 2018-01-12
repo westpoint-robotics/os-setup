@@ -22,10 +22,11 @@
 - Disable screen lock
 - *REASON: Almost always, these laptops are placed on the turtlebots and may not connected to a power source. Hence the need to conserve battery. The auto-lock is more of an inconvenience and may cause errors while in the midst of a critical operation.*
 ----------------------------
-#### 5. Disable bluetooth on start-up
-- `gksu gedit /etc/bluetooth/main.conf`
-- Change the InitiallyPowered setting to false.
-- *REASON: We often do not use bluetooth and can conserve battery power. This can still be re-enabled through the desktop gui.*
+#### 5. Disable bluetooth on start up
+- `gksu gedit /etc/rc.local`
+- Add this line before `exit 0`: rfkill block bluetooth
+- You should still be able to enable Bluetooth through the top bar applet or System Settings.
+- *REASON: We often do not require bluetooth and we rather conserve the battery. This can always be re-enabled through the desktop gui.*
 ----------------------------
 #### 6. Edit Terminal's Default Profile
 - Open Terminal. Click on Edit -> Profile Preferences
