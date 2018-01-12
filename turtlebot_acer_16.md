@@ -99,7 +99,7 @@
 - Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
 - Plug the camera back and it should run with the ROS packages now.
 -----------------------------
-### 20. Turtlebot Player Stage Gazebo (Optional)
+#### 20. Turtlebot Player Stage Gazebo (Optional)
 - `sudo apt-get install ros-kinetic-turtlebot-stage ros-kinetic-turtlebot-navigation ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers`
 - Copy the map files to ~/stage by:
  - `mkdir ~/stage`
