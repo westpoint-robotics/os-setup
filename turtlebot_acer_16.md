@@ -77,14 +77,20 @@
 -----------------------------
 #### 15. Turtlebot
 - `sudo apt-get install ros-kinetic-turtlebot*`
-- If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation). These commands were framed for Indigo. Hence you'll have to change the distro names in all the commands to 'kinetic'.
+- If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/kinetic/Turtlebot%20Installation). These commands were framed for kinetic. Hence you'll have to change the distro names in all the commands to 'kinetic'.
 ----------------------------
-#### 16. Fixed battery reading error in turtlebot by adding this line to the .bashrc file.
+### 16. Environmental variables that must be set for minimal.launch to run.
+- `export TURTLEBOT_BASE=kobuki`
 - `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
+- `export TURTLEBOT_STACKS=hexagons`
+- `export TURTLEBOT_3D_SENSOR=astra`
+- `export TURTLEBOT_SIMULATION=false`
+- `export TURTLEBOT_STACKS=hexagons`
+- `export TURTLEBOT_SERIAL_PORT=/dev/kobuki`
 ----------------------------
 #### 17. Fixed joystick conflict.
 - This conflict is caused becuase the joy node default joystick device location is at `/dev/input/js0` but the Acer Laptop maps its accelrometer to `js0`. Now when the xbox controller is plugged in it becomes `/dev/input/js1`. To solve this, edit the `xbox360_teleop.launch` file by running this command:
-- `sudo sed -i '18i \ \ <param name="joystick/dev" value="/dev/input/js1"/>'  /opt/ros/indigo/share/turtlebot_teleop/launch/xbox360_teleop.launch`
+- `sudo sed -i '18i \ \ <param name="joystick/dev" value="/dev/input/js1"/>'  /opt/ros/kinetic/share/turtlebot_teleop/launch/xbox360_teleop.launch`
 ----------------------------
 #### 18. USB Warning
 -  The following warning appears upon starting the xtion sensor: `Warning: USB events thread - failed to set priority. This might cause loss of data...`
