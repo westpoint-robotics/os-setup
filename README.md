@@ -8,7 +8,8 @@ Directions for customizing Operating System after basic install. (For faculty an
 
 #### 1. [HP Elite Desktop](https://github.com/westpoint-robotics/os-setup/blob/master/HPelite.md)
 #### 2. [Ubuntu 14.04 LTS and ROS Indigo](https://github.com/westpoint-robotics/os-setup/blob/master/ubuntu14.md)
-#### 3. [Turtlebot laptop (Acer Aspire E11)](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_acer.md)
-#### 4. [RRC Laptop (Dell Latitude E7270)](https://github.com/westpoint-robotics/os-setup/blob/master/rrc_e7270.md)
-#### 5. [Archive of bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
-#### 6. [ROS Commands Summary](https://github.com/westpoint-robotics/os-setup/blob/master/ros-commands.md)
+#### 3. [Turtlebot laptop (Acer Aspire E11) with Ubuntu 14.04](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_acer_14.md)
+#### 4. [Turtlebot laptop (Acer Aspire E11) with Ubuntu 16.04](https://github.com/westpoint-robotics/os-setup/blob/master/turtlebot_acer_16.md)
+#### 5. [RRC Laptop (Dell Latitude E7270)](https://github.com/westpoint-robotics/os-setup/blob/master/rrc_e7270.md)
+#### 6. [Archive of bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
+#### 7. [ROS Commands Summary](https://github.com/westpoint-robotics/os-setup/blob/master/ros-commands.md)
