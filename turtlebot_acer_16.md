@@ -79,14 +79,17 @@
 - `sudo apt-get install ros-kinetic-turtlebot*`
 - If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/kinetic/Turtlebot%20Installation). These commands were framed for kinetic. Hence you'll have to change the distro names in all the commands to 'kinetic'.
 ----------------------------
-### 16. Environmental variables that must be set for minimal.launch to run.
-- `export TURTLEBOT_BASE=kobuki`
-- `export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"`
-- `export TURTLEBOT_STACKS=hexagons`
-- `export TURTLEBOT_3D_SENSOR=astra`
-- `export TURTLEBOT_SIMULATION=false`
-- `export TURTLEBOT_STACKS=hexagons`
-- `export TURTLEBOT_SERIAL_PORT=/dev/kobuki`
+#### 16. Environmental variables that must be set for minimal.launch to run.
+- Copy and paste the following lines to `~/.bashrc` file:
+```
+export TURTLEBOT_BASE=kobuki
+export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"
+export TURTLEBOT_STACKS=hexagons
+export TURTLEBOT_3D_SENSOR=astra
+export TURTLEBOT_SIMULATION=false
+export TURTLEBOT_STACKS=hexagons
+export TURTLEBOT_SERIAL_PORT=/dev/kobuki
+```
 -----------------------------
 #### 18. Orbbec Astra RGB-D camera [[1]](http://wiki.ros.org/astra_camera)
 - Plug in the camera and let the drivers auto-install
