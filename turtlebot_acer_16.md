@@ -77,7 +77,7 @@
 -----------------------------
 #### 15. Turtlebot
 - `sudo apt-get install ros-kinetic-turtlebot*`
-- If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/kinetic/Turtlebot%20Installation). These commands were framed for kinetic. Hence you'll have to change the distro names in all the commands to 'kinetic'.
+- If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/kinetic/Turtlebot%20Installation). These commands were framed for indigo. Hence you'll have to change the distro names in all the commands to 'kinetic'.
 ----------------------------
 #### 16. Environmental variables that must be set for minimal.launch to run.
 - Copy and paste the following lines to `~/.bashrc` file:
