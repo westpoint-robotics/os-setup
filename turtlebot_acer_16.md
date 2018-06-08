@@ -96,7 +96,7 @@ export TURTLEBOT_SERIAL_PORT=/dev/kobuki
 - `gksu gedit /etc/udev/rules.d/56-orbbec.rules`
 - Add the lines contained in [this](https://github.com/westpoint-robotics/os-setup/blob/master/orbbec_camera_udev.txt) text file.
 - Save and close text editor.
-- Unplug the camera, run `sudo udev service reload` and then `sudo udev service restart`.
+- Unplug the camera, run `sudo service udev reload` and then `sudo service udev restart`.
 - Plug the camera back and it should run with the ROS packages now.
 -----------------------------
 #### 17. Turtlebot Player Stage Gazebo (Optional)
