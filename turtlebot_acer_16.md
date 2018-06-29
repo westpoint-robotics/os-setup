@@ -76,7 +76,7 @@
 - `rospack profile`
 -----------------------------
 #### 15. Turtlebot
-- `sudo apt-get install ros-kinetic-turtlebot*`
+- `sudo apt-get install ros-kinetic-turtlebot-*`
 - If the above command does not work, follow installation instructions provided in [this tutorial](http://wiki.ros.org/turtlebot/Tutorials/kinetic/Turtlebot%20Installation). These commands were framed for indigo. Hence you'll have to change the distro names in all the commands to 'kinetic'.
 ----------------------------
 #### 16. Environmental variables that must be set for minimal.launch to run.
@@ -87,7 +87,6 @@ export TURTLEBOT_BATTERY="/sys/class/power_supply/BAT1"
 export TURTLEBOT_STACKS=hexagons
 export TURTLEBOT_3D_SENSOR=astra
 export TURTLEBOT_SIMULATION=false
-export TURTLEBOT_STACKS=hexagons
 export TURTLEBOT_SERIAL_PORT=/dev/kobuki
 ```
 -----------------------------
