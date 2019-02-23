@@ -15,7 +15,7 @@
 - source ~/.bashrc
 
 ##### 3. Install additional tools
-- sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools python-rosdep python-- - rosinstall python-rosinstall-generator build-essential
+- sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools python-rosdep build-essential gedit-plugins 
 
 #### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
@@ -41,6 +41,8 @@
 - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
 - Click Edit -> Preferences -> Editor. 
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
+- Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
+- Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
 
 #### 9. Allow user1 to dialout on USB devices
  - `sudo adduser user1 dialout`
