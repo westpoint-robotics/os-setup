@@ -14,3 +14,4 @@ Directions for customizing Operating System after basic install. (For faculty an
 #### 6. [RRC Laptop (Dell Latitude E7270)](https://github.com/westpoint-robotics/os-setup/blob/master/rrc_e7270.md)
 #### 7. [Archive of bug fixes](https://github.com/westpoint-robotics/os-setup/blob/master/bugfixes.md)
 #### 8. [ROS Commands Summary](https://github.com/westpoint-robotics/os-setup/blob/master/ros-commands.md)
+#### 9. [Installing a Screen Rocorder](https://github.com/westpoint-robotics/os-setup/blob/master/screen_recorder.md)
