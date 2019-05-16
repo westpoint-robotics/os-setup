@@ -48,11 +48,11 @@
         `ssh-add bitBucket_id_rsa`
         
 #### 10. Clone this repo from DI2E bitbucket:
-    1. `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
-    2. `cd ~/configuration`
-    3. `./setup_workspace.sh`
+1. `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
+2. `cd ~/configuration`
+3. `./setup_workspace.sh`
     - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again. `ssh-add bitBucket_id_rsa`
-    4. `cd $HOME/code/rtk`
-    5. `catkin build`
+4. `cd $HOME/code/rtk`
+5. `catkin build`
     
 
