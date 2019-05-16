@@ -36,7 +36,7 @@
 - `git config --global user.email "dominic.larkin@westpoint.edu"`
 - `git config --global user.name "User1 Nuvo"`
 - `git config --global push.default simple`
-- `git config --global credential.helper "cache --timeout=6000"`
+- `git config --global credential.helper "cache --timeout=60000"`
 
 #### 9. Setup DI2E access with keys
 - Add the public key to the computers known-hosts. 
@@ -51,5 +51,8 @@
     1. `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
     2. `cd ~/configuration`
     3. `./setup_workspace.sh`
-
+    - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again. `ssh-add bitBucket_id_rsa`
+    4. `cd $HOME/code/rtk`
+    5. `catkin build`
+    
 
