@@ -38,7 +38,7 @@
  - `sudo adduser user1 dialout`
  
 #### 9. Setup git
-- `git config --global user.email "dominic.larkin@westpoint.edu"`
+- `git config --global user.email "user1@ros304.com"`
 - `git config --global user.name "User1 Nuvo"`
 - `git config --global push.default simple`
 - `git config --global credential.helper "cache --timeout=60000"`
@@ -83,14 +83,10 @@ AND
 `sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
 
 ## After RTK success install
-### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.  
-127.0.0.1       mrzr-8803-localization  
-127.0.0.1       mrzr-8803-lidar  
-127.0.0.1       mrzr-8803-vision  
 
 ### Added to .bashrc
 
-source /opt/ros/kinetic/setup.bash 
+source /opt/ros/kinetic/setup.bash  
 source /home/user1/code/rtk/devel/setup.bash  
 source /home/user1/as_drivers/devel/setup.bash --extend  
 
@@ -110,24 +106,23 @@ Problem with library versions again:
   207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels  
   208  locate linuxcan   
 
-
-  `<arg name="is_pacmod_3" default="true" />`  
-to
-
-  `<arg name="is_pacmod_3" default="false" />`  
+Change this:  
+`<arg name="is_pacmod_3" default="true" />`  
+to  
+`<arg name="is_pacmod_3" default="false" />`  
+and
   
-  
-  `<arg name="pacmod_can_hardware_id" default="43029" />`  
-to
-    `<arg name="pacmod_can_hardware_id" default="10812" /> `  
-    
-    Change to the serial number of the device we are using. Omit the leading zero.
+
+Change to the serial number of the device we are using. Omit the leading zero.
 SN of Canbus interface device: 010812  
-    
-    
-  `<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
+`<arg name="pacmod_can_hardware_id" default="43029" />`  
+to  
+`<arg name="pacmod_can_hardware_id" default="10812" /> `  
+        
+Change this:  
+`<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
   to
-    `<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
+`<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
     
 Exit from pacmod_game_control.launch  
 
@@ -142,7 +137,7 @@ With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plu
 
 
 ### Install XSENS navigation system software
-cd as_drivers/src/  
+cd ~/as_drivers/src/  
 git clone https://github.com/westpoint-robotics/usma_xsens.git  
 sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev  
 
@@ -152,43 +147,47 @@ echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0003", ATTRS{idVendor}=="2639", ATTRS
 udevadm control --reload-rules  
 exit  
 
-####### TODO FXTHIS. Hardcode change in node src for frame id and topics.
-added to bashrc  
+
+Add to bashrc  
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens  
 
+## Below here are notes on process used for initial setup:
+### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.  
+127.0.0.1       mrzr-8803-localization  
+127.0.0.1       mrzr-8803-lidar  
+127.0.0.1       mrzr-8803-vision  
 
 ### Get the updated velodyne drivers from TARDEC that work with the 64E  
 These files came from TARDEC from Jack Hartner.  
 
-velodyne_hl folder moved to:  
-code/rtk/src/TARDEC/tardec_perception/  
+velodyne_hl folder moved to: code/rtk/src/TARDEC/tardec_perception/  
+`rm -rf code/rtk/src/TARDEC/tardec_perception/velodyne_hl/`  
+`mv velodyne_hl/ code/rtk/src/TARDEC/tardec_perception/`  
 
-velodyne_ll to:  
-code/rtk/src/TARDEC/tardec_drivers/  
-
-user1@nuvo:~$ rm -rf code/rtk/src/TARDEC/tardec_perception/velodyne_hl/
-user1@nuvo:~$ mv velodyne_hl/ code/rtk/src/TARDEC/tardec_perception/
-user1@nuvo:~$ rm -rf code/rtk/src/TARDEC/tardec_drivers/velodyne_ll/
-user1@nuvo:~$ mv velodyne_ll/ code/rtk/src/TARDEC/tardec_drivers/
+velodyne_ll to: code/rtk/src/TARDEC/tardec_drivers/  
+`rm -rf code/rtk/src/TARDEC/tardec_drivers/velodyne_ll/`  
+`mv velodyne_ll/ code/rtk/src/TARDEC/tardec_drivers/`  
 
 
 
-### mode other code in RTK
-Modify this file:
-/home/user1/code/rtk/src/SUMET/sumet_vehicle_interface/sumet_low_level_controller/src/gear_state_module.cpp
+### Move other code in RTK
+Modify this file:  
+/home/user1/code/rtk/src/SUMET/sumet_vehicle_interface/sumet_low_level_controller/src/gear_state_module.cpp  
 
-Change the below code to this: (around line 359)
-void GearStateModule::handleTransmissionSense(
-  const marti_dbw_msgs::TransmissionFeedbackConstPtr &msg)
-{
+Change the below code to this: (around line 359)  
+```
+void GearStateModule::handleTransmissionSense(  
+  const marti_dbw_msgs::TransmissionFeedbackConstPtr &msg)  
+{  
   reported_gear_ = oldRangeFromNew(msg->current_range);  
-//  if (!msg->stable) {
-//    current_gear_ = snm::DbwGear::UNKNOWN;
-//  } else {
-//    current_gear_ = reported_gear_;
-//  }
-    current_gear_ = reported_gear_;
+//  if (!msg->stable) {  
+//    current_gear_ = snm::DbwGear::UNKNOWN;  
+//  } else {  
+//    current_gear_ = reported_gear_;  
+//  }  
+    current_gear_ = reported_gear_;  
 }
+```
 
 user1@nuvo:~/code/rtk/src/SUMET/sumet_platform/platform_common/launch$ gedit localization.launch 
 
@@ -197,43 +196,43 @@ user1@nuvo:~/code/rtk/src/SUMET/sumet_platform/platform_common/launch$ gedit loc
 - `cd $HOME/code/rtk`
 - `catkin build`
 
-### Add the 2019 Code and Launch file
-  255  mv mrzr_8803.launch code/rtk/src/SUMET/sumet_platform/mrzr_8803/launch/
-  256  mv gem_to_rtk_report.py Desktop/
-  257  mv rtk_to_gem_low.py Desktop/
+### Add the 2019 Code and Launch file   
+  255  mv mrzr_8803.launch code/rtk/src/SUMET/sumet_platform/mrzr_8803/launch/  
+  256  mv gem_to_rtk_report.py Desktop/  
+  257  mv rtk_to_gem_low.py Desktop/  
 
 
 Modify the file and save as _new
 gedit /home/user1/code/rtk/src/SUMET/sumet_platform/platform_common/launch/velodyne_new.launch
  
-  <arg name="front_lidar_ip" default="192.168.1.10"/>
-  <arg name="front_lidar_model" default="HDL64E"/>
+  `<arg name="front_lidar_ip" default="192.168.1.10"/>`
+  `<arg name="front_lidar_model" default="HDL64E"/>`
 
 
-  <arg name="rear_lidar_ip" default="192.168.1.10"/>
-  <arg name="rear_lidar_model" default="HDL64E"/>
+  `<arg name="rear_lidar_ip" default="192.168.1.10"/>`
+  `<arg name="rear_lidar_model" default="HDL64E"/>`
 
 ### Run the system
 First start WMI, it appears to have a better chance of working if WMI is running first.
 
-Second:
-user1@nuvo:~$ roslaunch mrzr_8803 mrzr_8803.launch 
-user1@nuvo:~$ python Desktop/rtk_to_gem_low.py 
-user1@nuvo:~$ python Desktop/gem_to_rtk_report.py 
+Second:  
+user1@nuvo:~$ roslaunch mrzr_8803 mrzr_8803.launch   
+user1@nuvo:~$ python Desktop/rtk_to_gem_low.py   
+user1@nuvo:~$ python Desktop/gem_to_rtk_report.py   
 
 
 
 
-user1@nuvo:~$ mv localization_new.launch ~/code/rtk/src/SUMET/sumet_platform/platform_common/launch
-user1@nuvo:~$ mv velodyne_new.launch ~/code/rtk/src/SUMET/^C
-user1@nuvo:~$ ^C
-user1@nuvo:~$ mv velodyne_new.launch ~/code/rtk/src/SUMET/sumet_platform/platform_common/launch
+user1@nuvo:~$ mv localization_new.launch ~/code/rtk/src/SUMET/sumet_platform/platform_common/launch  
+user1@nuvo:~$ mv velodyne_new.launch ~/code/rtk/src/SUMET/^C  
+user1@nuvo:~$ ^C  
+user1@nuvo:~$ mv velodyne_new.launch ~/code/rtk/src/SUMET/sumet_platform/platform_common/launch  
 
 
 
-Inside: 
-localization_new.launch:
-        <node pkg="xsens_driver" type="mtnode_new.py" name="xsens_driver" output="screen" ns="xsens">
+Inside:   
+localization_new.launch:  
+       ` <node pkg="xsens_driver" type="mtnode_new.py" name="xsens_driver" output="screen" ns="xsens">
 		    <param name="frame_id" value="$(arg frame_id)"/>
 		    <param name="frame_local" value="$(arg frame_local)"/>
 		    <param name="frame_local_imu" value="$(arg frame_local_imu)"/>
@@ -241,7 +240,7 @@ localization_new.launch:
         	    <param name="baudrate" value="115200"/>
               <remap from="/localization/imu/raw" to='imu/data'/>
               <remap from="/localization/fix" to="fix"/>
-              <remap from="/localization/gps" to="fix_extended"/>
+              <remap from="/localization/gps" to="fix_extended"/>`
 
 
 
