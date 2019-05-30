@@ -1,53 +1,59 @@
-#### 1. Install Google Chrome stable from a repo
+#### 1. Update the OS  
+- `sudo apt-get update`
+- `sudo apt-get upgrade`
+- `sudo apt-get dist-upgrade`
+
+#### 2. Install Google Chrome stable from a repo
 - `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
 - `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
 - `sudo apt-get update` 
 - `sudo apt-get install google-chrome-stable`
 
-#### 2. Install additional tools
+#### 3. Install additional tools
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins` 
 
-#### 3. Extend length of History
+#### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
 
-#### 4. Modify Power Saving
+#### 5. Modify Power Saving
 - Go to System Settings -> All Settings -> Brightness & Lock
 - Check 'Dim screen to save power'
 - Set "Turn screen off when inactive for: Never"
 - Disable screen lock
 
-#### 5. Edit Terminal's Default Profile
+#### 6. Edit Terminal's Default Profile
 - Open Terminal. Click on Edit -> Profile Preferences
 - On the Scrolling tab, uncheck the box "Limit scrollback to:"
 
-#### 6. GEDIT Preferences.
+#### 7. GEDIT Preferences.
 - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
 - Click Edit -> Preferences -> Editor. 
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
 - Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
 
-#### 7. Allow user1 to dialout on USB devices
+#### 8. Allow user1 to dialout on USB devices
  - `sudo adduser user1 dialout`
  
-#### 8. Setup git
+#### 9. Setup git
 - `git config --global user.email "dominic.larkin@westpoint.edu"`
 - `git config --global user.name "User1 Nuvo"`
 - `git config --global push.default simple`
 - `git config --global credential.helper "cache --timeout=60000"`
 
-#### 9. Setup DI2E access with keys
+#### 10. Setup DI2E access with keys
 - Add the public key to the computers known-hosts. 
-    - Copy the public key to ~/.ssh and cd into that directory:
+    - Copy the public key to ~/.ssh and cd into that directory:  
         `cd ~/.ssh`
-    - Set proper permission for key:
+    - Set proper permission for key:  
         `chmod 600 bitbucket_id_rsa`
-    - Add key to knownhosts
+    - Add key to knownhosts  
         `ssh-add bitBucket_id_rsa`
         
-#### 10. Clone this repo from DI2E bitbucket:
+#### 11. Clone this repo from DI2E bitbucket:
+- `cd ~`
 - `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
 - `cd ~/configuration`
 - `./setup_workspace.sh`
@@ -77,58 +83,58 @@ AND
 `sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
 
 ## After RTK success install
-### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.
-127.0.0.1       mrzr-8803-localization
-127.0.0.1       mrzr-8803-lidar
-127.0.0.1       mrzr-8803-vision
+### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.  
+127.0.0.1       mrzr-8803-localization  
+127.0.0.1       mrzr-8803-lidar  
+127.0.0.1       mrzr-8803-vision  
 
 ### Added to .bashrc
 
-source /opt/ros/kinetic/setup.bash
-source /home/user1/code/rtk/devel/setup.bash
-source /home/user1/as_drivers/devel/setup.bash --extend
+source /opt/ros/kinetic/setup.bash 
+source /home/user1/code/rtk/devel/setup.bash  
+source /home/user1/as_drivers/devel/setup.bash --extend  
 
 ### Add Autonomous Stuff drivers
-These can be downloaded from AStuff github.
+These can be downloaded from AStuff github.  
 
-Unpack the file: pacmod_ros_install.tar.gz
-Follow instructions in with the below exception: readme_first.txt 
-Instead of doing the first steps, cd into the directory called pacmod_ros_install then run this command:
+Unpack the file: pacmod_ros_install.tar.gz  
+Follow instructions in with the below exception: readme_first.txt   
+Instead of doing the first steps, cd into the directory called pacmod_ros_install then run this command:  
 
-`chmod +x pacmod_install.sh` 
-`./pacmod_install.sh` 
+`chmod +x pacmod_install.sh`   
+`./pacmod_install.sh`   
 
-Problem with library versions again:
-  205  locate listChannels
-  206  sudo ln -s /usr/src/linuxcan-5.27.776 /usr/src/linuxcan-5.24.533
-  207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels
-  208  locate linuxcan
+Problem with library versions again:  
+  205  locate listChannels  
+  206  sudo ln -s /usr/src/linuxcan-5.27.776 /usr/src/linuxcan-5.24.533  
+  207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels  
+  208  locate linuxcan   
 
 
-  <arg name="is_pacmod_3" default="true" />
+  `<arg name="is_pacmod_3" default="true" />`  
 to
 
-  <arg name="is_pacmod_3" default="false" />
+  `<arg name="is_pacmod_3" default="false" />`  
   
   
-  <arg name="pacmod_can_hardware_id" default="43029" />
+  `<arg name="pacmod_can_hardware_id" default="43029" />`  
 to
-    <arg name="pacmod_can_hardware_id" default="10812" /> 
+    `<arg name="pacmod_can_hardware_id" default="10812" /> `  
     
     Change to the serial number of the device we are using. Omit the leading zero.
-SN of Canbus interface device: 010812
+SN of Canbus interface device: 010812  
     
     
-  <arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />
+  `<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
   to
-    <arg name="pacmod_vehicle_type" default="POLARIS_GEM" />
+    `<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
     
-Exit from pacmod_game_control.launch
+Exit from pacmod_game_control.launch  
 
 ### Verify Pacmod is working with a joystick:
-The Logitech Joystick that belongs to th E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
+The Logitech Joystick that belongs to the GEM E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
 
-run the command:
+run the command:  
 `roslaunch pacmod_game_control pacmod_game_control.launch`
 
 With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plugged in, you can drive the E2.
@@ -136,29 +142,29 @@ With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plu
 
 
 ### Install XSENS navigation system software
-cd as_drivers/src/
-git clone https://github.com/westpoint-robotics/usma_xsens.git
-sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev
+cd as_drivers/src/  
+git clone https://github.com/westpoint-robotics/usma_xsens.git  
+sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev  
 
-sudo su
-echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0017", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti700", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules
-echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0003", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti300", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules
-udevadm control --reload-rules
-exit
+sudo su  
+echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0017", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti700", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
+echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0003", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti300", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
+udevadm control --reload-rules  
+exit  
 
 ####### TODO FXTHIS. Hardcode change in node src for frame id and topics.
-added to bashrc
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens
+added to bashrc  
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens  
 
 
-### Get the updated velodyne drivers from TARDEC that work with the 64E
-These files came from TARDEC from Jack Hartner.
+### Get the updated velodyne drivers from TARDEC that work with the 64E  
+These files came from TARDEC from Jack Hartner.  
 
-velodyne_hl folder moved to:
-code/rtk/src/TARDEC/tardec_perception/
+velodyne_hl folder moved to:  
+code/rtk/src/TARDEC/tardec_perception/  
 
-velodyne_ll to:
-code/rtk/src/TARDEC/tardec_drivers/
+velodyne_ll to:  
+code/rtk/src/TARDEC/tardec_drivers/  
 
 user1@nuvo:~$ rm -rf code/rtk/src/TARDEC/tardec_perception/velodyne_hl/
 user1@nuvo:~$ mv velodyne_hl/ code/rtk/src/TARDEC/tardec_perception/
