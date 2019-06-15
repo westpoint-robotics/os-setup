@@ -57,12 +57,13 @@
 - `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
 - `cd ~/configuration`
 - `./setup_workspace.sh`
-    - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again. `ssh-add bitBucket_id_rsa`
+    - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again.  
+ `ssh-add bitBucket_id_rsa`
 - `cd $HOME/code/rtk`
 - `catkin build`
     
     
-sudo apt-get install libopenni2-*
+- `sudo apt-get install libopenni2-*`
 ### THESE ERRORS occured:    
 - CMake Error at /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake:27 (message):
   The imported target "Qt5::Gui" references the file
@@ -84,13 +85,13 @@ AND
 
 ## After RTK success install
 
-### Added to .bashrc
+### 12. Added to .bashrc
 
 source /opt/ros/kinetic/setup.bash  
 source /home/user1/code/rtk/devel/setup.bash  
 source /home/user1/as_drivers/devel/setup.bash --extend  
 
-### Add Autonomous Stuff drivers
+### 13. Add Autonomous Stuff drivers
 These can be downloaded from AStuff github.  
 
 Unpack the file: pacmod_ros_install.tar.gz  
@@ -105,6 +106,8 @@ Problem with library versions again:
   206  sudo ln -s /usr/src/linuxcan-5.27.776 /usr/src/linuxcan-5.24.533  
   207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels  
   208  locate linuxcan   
+
+`roscd pacmod_game_control/launch && gedit pacmod_game_control.launch`
 
 Change this:  
 `<arg name="is_pacmod_3" default="true" />`  
@@ -121,12 +124,12 @@ to
         
 Change this:  
 `<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
-  to
+  to  
 `<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
     
 Exit from pacmod_game_control.launch  
 
-### Verify Pacmod is working with a joystick:
+### 14, Verify Pacmod is working with a joystick:
 The Logitech Joystick that belongs to the GEM E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
 
 run the command:  
@@ -136,7 +139,7 @@ With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plu
 
 
 
-### Install XSENS navigation system software
+### 15. Install XSENS navigation system software
 cd ~/as_drivers/src/  
 git clone https://github.com/westpoint-robotics/usma_xsens.git  
 sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev  
@@ -151,6 +154,16 @@ exit
 Add to bashrc  
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens  
 
+#### 16. Instal Vimba_2_1 Camera Drivers
+- extract the files from Vimba_v2.1.3_Linux.tgz
+- Follow the instructions on page 29 of the "Vimba Manual for Linux" 
+
+- Install ROS package for Vimba
+`sudo apt-get install ros-kinetic-avt-vimba-camera`
+
+#### 17. Pull the latest GEM updates
+- `cd ~/code/rtk/src/gem_e2`
+- `git pull`
 ## Below here are notes on process used for initial setup:
 ### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.  
 127.0.0.1       mrzr-8803-localization  
