@@ -3,21 +3,21 @@
 - `sudo apt-get upgrade`
 - `sudo apt-get dist-upgrade`
 
-1. Install Google Chrome stable from a repo
+1. Install Google Chrome stable from a repo  
 - `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
 - `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
 - `sudo apt-get update` 
 - `sudo apt-get install google-chrome-stable`
 
-1. Install additional tools
+1. Install additional tools  
 - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins` 
 
-1. Install additional simplescreenrecorder for recording the desktop
+1. Install additional simplescreenrecorder for recording the desktop  
 - `sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder`
 - `sudo apt-get update`
 - `sudo apt-get install simplescreenrecorder`
 
-1. Extend length of History
+1. Extend length of History  
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
