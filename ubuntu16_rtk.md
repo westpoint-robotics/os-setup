@@ -134,7 +134,7 @@
         
     Exit from pacmod_game_control.launch  
 
-    ### 14, Verify Pacmod is working with a joystick:
+1. Verify Pacmod is working with a joystick:
     The Logitech Joystick that belongs to the GEM E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
 
     run the command:  
