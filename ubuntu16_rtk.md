@@ -1,174 +1,175 @@
 1. Update the OS  
-- `sudo apt-get update`
-- `sudo apt-get upgrade`
-- `sudo apt-get dist-upgrade`
+    - `sudo apt-get update`
+    - `sudo apt-get upgrade`
+    - `sudo apt-get dist-upgrade`
 
 1. Install Google Chrome stable from a repo  
-- `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
-- `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
-- `sudo apt-get update` 
-- `sudo apt-get install google-chrome-stable`
+    - `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
+    - `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
+    - `sudo apt-get update` 
+    - `sudo apt-get install google-chrome-stable`
 
 1. Install additional tools  
-- `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins` 
+    - `sudo apt-get install meld minicom ant git gitk gksu openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins` 
 
 1. Install additional simplescreenrecorder for recording the desktop  
-- `sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder`
-- `sudo apt-get update`
-- `sudo apt-get install simplescreenrecorder`
+    - `sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder`
+    - `sudo apt-get update`
+    - `sudo apt-get install simplescreenrecorder`
 
 1. Extend length of History  
-- In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
-- HISTSIZE=100000
-- HISTFILESIZE=200000
+    - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
+    - HISTSIZE=100000
+    - HISTFILESIZE=200000
 
 1. Modify Power Saving
-- Go to System Settings -> All Settings -> Brightness & Lock
-- Check 'Dim screen to save power'
-- Set "Turn screen off when inactive for: Never"
-- Disable screen lock
+    - Go to System Settings -> All Settings -> Brightness & Lock
+    - Check 'Dim screen to save power'
+    - Set "Turn screen off when inactive for: Never"
+    - Disable screen lock
 
 1. Edit Terminal's Default Profile
-- Open Terminal. Click on Edit -> Profile Preferences
-- On the Scrolling tab, uncheck the box "Limit scrollback to:"
+    - Open Terminal. Click on Edit -> Profile Preferences
+    - On the Scrolling tab, uncheck the box "Limit scrollback to:"
 
 1. GEDIT Preferences.
-- Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
-- Click Edit -> Preferences -> Editor. 
-- Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
-- Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
-- Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
+    - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
+    - Click Edit -> Preferences -> Editor. 
+    - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
+    - Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
+    - Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
 
 1. Allow user1 to dialout on USB devices
- - `sudo adduser user1 dialout`
+    - `sudo adduser user1 dialout`
  
 1. Setup git
-- `git config --global user.email "user1@ros304.com"`
-- `git config --global user.name "User1 Nuvo"`
-- `git config --global push.default simple`
-- `git config --global credential.helper "cache --timeout=60000"`
+    - `git config --global user.email "user1@ros304.com"`
+    - `git config --global user.name "User1 Nuvo"`
+    - `git config --global push.default simple`
+    - `git config --global credential.helper "cache --timeout=60000"`
 
 1. Setup DI2E access with keys
-- Add the public key to the computers known-hosts. 
-    - Copy the public key to ~/.ssh and cd into that directory:  
-        `cd ~/.ssh`
-    - Set proper permission for key:  
-        `chmod 600 bitbucket_id_rsa`
-    - Add key to knownhosts  
-        `ssh-add bitBucket_id_rsa`
+    - Add the public key to the computers known-hosts. 
+        - Copy the public key to ~/.ssh and cd into that directory:  
+            `cd ~/.ssh`
+        - Set proper permission for key:  
+            `chmod 600 bitbucket_id_rsa`
+        - Add key to knownhosts  
+            `ssh-add bitBucket_id_rsa`
         
 1. Clone this repo from DI2E bitbucket:
-- `cd ~`
-- `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
-- `cd ~/configuration`
-- `./setup_workspace.sh`
-    - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again.  
- `ssh-add bitBucket_id_rsa`
-- `cd $HOME/code/rtk`
-- `catkin build`
-    
-    
-- `sudo apt-get install libopenni2-*`
-### THESE ERRORS occured:    
-- CMake Error at /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake:27 (message):
-  The imported target "Qt5::Gui" references the file
-
-     "/usr/lib/x86_64-linux-gnu/libEGL.so"
-
-  but this file does not exist.  
-- REASON: The version of the libEGL.so and libGL.so file are hard coded somewhere. If a different version is installed on the computer then this error occurs.
-- FIX: Created a symbolic link from the missing version number to the existing version number with commands like:
-
-`sudo rm /usr/lib/x86_64-linux-gnu/libEGL.so`
-
-`sudo ln -s /usr/lib/x86_64-linux-gnu/mesa-egl/libEGL.so /usr/lib/x86_64-linux-gnu/libEGL.so`
-
-AND
-`sudo rm /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
-
-`sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
-
-## After RTK success install
-
-### 1. Added to .bashrc
-
-source /opt/ros/kinetic/setup.bash  
-source /home/user1/code/rtk/devel/setup.bash  
-source /home/user1/as_drivers/devel/setup.bash --extend  
-
-### 1. Add Autonomous Stuff drivers
-These can be downloaded from AStuff github.  
-
-Unpack the file: pacmod_ros_install.tar.gz  
-Follow instructions in with the below exception: readme_first.txt   
-Instead of doing the first steps, cd into the directory called pacmod_ros_install then run this command:  
-
-`chmod +x pacmod_install.sh`   
-`./pacmod_install.sh`   
-
-Problem with library versions again:  
-  205  locate listChannels  
-  206  sudo ln -s /usr/src/linuxcan-5.27.776 /usr/src/linuxcan-5.24.533  
-  207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels  
-  208  locate linuxcan   
-
-`roscd pacmod_game_control/launch && gedit pacmod_game_control.launch`
-
-Change this:  
-`<arg name="is_pacmod_3" default="true" />`  
-to  
-`<arg name="is_pacmod_3" default="false" />`  
-and
-  
-
-Change to the serial number of the device we are using. Omit the leading zero.
-SN of Canbus interface device: 010812  
-`<arg name="pacmod_can_hardware_id" default="43029" />`  
-to  
-`<arg name="pacmod_can_hardware_id" default="10812" /> `  
+    - `cd ~`
+    - `git clone ssh://git@bitbucket.di2e.net:7999/rtk/configuration.git`
+    - `cd ~/configuration`
+    - `./setup_workspace.sh`
+        - Note: If the credential times out you will get errors for the repos that could not clone. If this happens reload you credentials and run the script again.  
+     `ssh-add bitBucket_id_rsa`
+    - `cd $HOME/code/rtk`
+    - `catkin build`
         
-Change this:  
-`<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
-  to  
-`<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
-    
-Exit from pacmod_game_control.launch  
+        
+    - `sudo apt-get install libopenni2-*`
+    ### THESE ERRORS occured:    
+    - CMake Error at /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake:27 (message):
+      The imported target "Qt5::Gui" references the file
 
-### 14, Verify Pacmod is working with a joystick:
-The Logitech Joystick that belongs to the GEM E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
+         "/usr/lib/x86_64-linux-gnu/libEGL.so"
 
-run the command:  
-`roslaunch pacmod_game_control pacmod_game_control.launch`
+      but this file does not exist.  
+    - REASON: The version of the libEGL.so and libGL.so file are hard coded somewhere. If a different version is installed on the computer then this error occurs.
+    - FIX: Created a symbolic link from the missing version number to the existing version number with commands like:
 
-With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plugged in, you can drive the E2.
+    `sudo rm /usr/lib/x86_64-linux-gnu/libEGL.so`
+
+    `sudo ln -s /usr/lib/x86_64-linux-gnu/mesa-egl/libEGL.so /usr/lib/x86_64-linux-gnu/libEGL.so`
+
+    AND
+    `sudo rm /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
+
+    `sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1.7.0 /usr/lib/x86_64-linux-gnu/mesa/libGL.so`
+
+    ## After RTK success install
+
+1. Added to .bashrc
+
+    - `source /opt/ros/kinetic/setup.bash`  
+    - `source /home/user1/code/rtk/devel/setup.bash`  
+    - `source /home/user1/as_drivers/devel/setup.bash --extend`  
+
+1. Add Autonomous Stuff drivers
+    These can be downloaded from AStuff github.  
+
+    Unpack the file: pacmod_ros_install.tar.gz  
+    Follow instructions in with the below exception: readme_first.txt   
+    Instead of doing the first steps, cd into the directory called pacmod_ros_install then run this command:  
+
+    `chmod +x pacmod_install.sh`   
+    `./pacmod_install.sh`   
+
+    Problem with library versions again:  
+      205  locate listChannels  
+      206  sudo ln -s /usr/src/linuxcan-5.27.776 /usr/src/linuxcan-5.24.533  
+      207  eval /usr/src/linuxcan-5.24.533/canlib/examples/listChannels  
+      208  locate linuxcan   
+
+    `roscd pacmod_game_control/launch && gedit pacmod_game_control.launch`
+
+    Change this:  
+    `<arg name="is_pacmod_3" default="true" />`  
+    to  
+    `<arg name="is_pacmod_3" default="false" />`  
+    and
+      
+
+    Change to the serial number of the device we are using. Omit the leading zero.
+    SN of Canbus interface device: 010812  
+    `<arg name="pacmod_can_hardware_id" default="43029" />`  
+    to  
+    `<arg name="pacmod_can_hardware_id" default="10812" /> `  
+            
+    Change this:  
+    `<arg name="pacmod_vehicle_type" default="LEXUS_RX_450H" />`  
+      to  
+    `<arg name="pacmod_vehicle_type" default="POLARIS_GEM" />`  
+        
+    Exit from pacmod_game_control.launch  
+
+    ### 14, Verify Pacmod is working with a joystick:
+    The Logitech Joystick that belongs to the GEM E2 must be in the x position. On the bottom of the joystick is switch with a x and y position.
+
+    run the command:  
+    `roslaunch pacmod_game_control pacmod_game_control.launch`
+
+    With the estop off and vehicle in Neutral and Parking Brake OFF and joystick plugged in, you can drive the E2.
 
 
 
-### 1. Install XSENS navigation system software
-cd ~/as_drivers/src/  
-git clone https://github.com/westpoint-robotics/usma_xsens.git  
-sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev  
+1. Install XSENS navigation system software
+    cd ~/as_drivers/src/  
+    git clone https://github.com/westpoint-robotics/usma_xsens.git  
+    sudo apt-get install ros-kinetic-gps-common libpcap0.8-dev  
 
-sudo su  
-echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0017", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti700", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
-echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0003", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti300", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
-udevadm control --reload-rules  
-exit  
+    sudo su  
+    echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0017", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti700", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
+    echo 'SUBSYSTEM=="tty", ATTRS{idProduct}=="0003", ATTRS{idVendor}=="2639", ATTRS{manufacturer}=="Xsens", SYMLINK+="mti300", ACTION=="add", GROUP="dialout", MODE="0660"' >> /etc/udev/rules.d/99-xsens.rules  
+    udevadm control --reload-rules  
+    exit  
 
 
-Add to bashrc  
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens  
+    Add to bashrc  
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/user1/as_drivers/src/usma_xsens  
 
 1. Instal Vimba_2_1 Camera Drivers
-- extract the files from Vimba_v2.1.3_Linux.tgz
-- Follow the instructions on page 29 of the "Vimba Manual for Linux" 
+    - extract the files from Vimba_v2.1.3_Linux.tgz
+    - Follow the instructions on page 29 of the "Vimba Manual for Linux" 
 
-- Install ROS package for Vimba
-`sudo apt-get install ros-kinetic-avt-vimba-camera`
+    - Install ROS package for Vimba
+    `sudo apt-get install ros-kinetic-avt-vimba-camera`
 
 1. Pull the latest GEM updates
-- `cd ~/code/rtk/src/gem_e2`
-- `git pull`
+    - `cd ~/code/rtk/src/gem_e2`
+    - `git pull`  
+
 ## Below here are notes on process used for initial setup:
 ### Modify /etc/hosts file by adding: TODO: This should not be required, remove all reference to other computers should be removed.  
 127.0.0.1       mrzr-8803-localization  
