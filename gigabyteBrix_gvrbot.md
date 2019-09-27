@@ -40,21 +40,12 @@
 - `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
 - `source ~/.bashrc`
 -----------------------------
-#### 8. Create catkin workspace
-- `mkdir -p ~/catkin_ws/src`
-- `cd ~/catkin_ws/src`
-- `catkin_init_workspace`
-- `cd ~/catkin_ws/`
-- `catkin_make`
-- `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
-- `source ~/.bashrc`
------------------------------
-#### 9. Clone GVRBot code from github
+#### 8. Clone GVRBot code from github
 - `cd ~/catkin_ws/src`
 - `git clone https://github.com/westpoint-robotics/usma_gvrbot.git`
 - `cd ~/catkin_ws/`
 - `catkin_make`
 - `source devel/setup.bash`
 -----------------------------
-#### 10. Connect to and drive around GVRBot
+#### 9. Connect to and drive around GVRBot
 - [Follow these instructions](https://github.com/westpoint-robotics/usma_gvrbot/blob/master/linux_connect.md)
