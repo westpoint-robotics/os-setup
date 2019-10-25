@@ -87,7 +87,7 @@
     Instead of doing the first steps, cd into the directory called pacmod_ros_install then run this command:  
 
     `chmod +x pacmod_install.sh`  
-    `./pacmod_install.sh`  
+    `bash ./pacmod_install.sh`  
     
     - Then edit the launch file to work with our hardware:  
     `roscd pacmod_game_control/launch && gedit pacmod_game_control.launch`
@@ -139,8 +139,10 @@
     `sudo apt-get install ros-kinetic-avt-vimba-camera`
 
 1. Pull the latest GEM updates
-    - `cd ~/code/rtk/src/gem_e2`
-    - `git pull`  
+    - `cd ~/catkin_ws/src/gem_e2`  
+    - `git clone ssh://git@bitbucket.di2e.net:7999/rtk4isa/gem_e2.git`  
+    - `cd ~/catkin_ws` 
+    - `catkin_make`
 
 # Below here are notes on process used for initial setup:
 ## The information below this point was used to get RTK2018 working with AY19 code. Some of this may not be needed as we move forward.
