@@ -1,13 +1,21 @@
 ##### 0. Update Ubuntu
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
+- `sudo apt-get update`
+- `sudo apt-get upgrade`
+- `sudo apt-get dist-upgrade`
 
 ##### 1. Install Google Chrome stable from a repo
 - `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
 - `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
 - `sudo apt-get update` 
 - `sudo apt-get install google-chrome-stable`
+###### Install chrome markdown viewer visit:    
+https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en
+- Choose add to Chrome.
+- After Markdown Viewer is installed:
+- Click on the "M" icon to the right of the address bar.
+- Choose advanced options
+- Choose Allow Access to File
+- Turn on the option called "Allow access to file URLs"
 
 ##### 2. Install ROS Melodic
 - `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
