@@ -27,7 +27,7 @@ https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgf
 - `sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential`
 
 ##### 3. Install additional tools
-- `sudo apt-get install meld minicom ant git gitk openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins dkms python-rosdep gedit-plugins` 
+- `sudo apt-get install meld minicom ant git gitk openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins dkms python-rosdep gedit-plugins libcanberra-gtk-module` 
 - `sudo rosdep init`
 - `rosdep update`
 
