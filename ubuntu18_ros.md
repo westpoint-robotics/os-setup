@@ -7,7 +7,7 @@
 ##### 2. Install [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 ##### 3. Install additional tools
-- `sudo apt-get install meld minicom ant git gitk openssh-server terminator gparted git-core python-argparse python-wstool python-vcstools build-essential gedit-plugins` 
+- `sudo apt-get install terminator meld gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python-argparse python-vcstools`
 
 #### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
