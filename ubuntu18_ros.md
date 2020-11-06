@@ -5,7 +5,7 @@
 - `sudo apt-get install google-chrome-stable`
 
 ##### 2. Install [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
-- After completing the steps outlined on ROS Wiki, create your workspace:
+- After completing the steps outlined in the above ROS Wiki, create your workspace:
 - `mkdir -p ~/catkin_ws/src`
 - `cd ~/catkin_ws/src`
 - `catkin_init_workspace`
