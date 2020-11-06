@@ -5,6 +5,15 @@
 - `sudo apt-get install google-chrome-stable`
 
 ##### 2. Install [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+- After completing the steps outlined on ROS Wiki, create your workspace:
+- `mkdir -p ~/catkin_ws/src`
+- `cd ~/catkin_ws/src`
+- `catkin_init_workspace`
+- `cd ~/catkin_ws/`
+- `catkin_make`
+- `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
+- `source $HOME/catkin_ws/devel/setup.bash`
+- `rospack profile`
 
 ##### 3. Install additional tools
 - `sudo apt-get install terminator meld gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python-argparse python-vcstools`
