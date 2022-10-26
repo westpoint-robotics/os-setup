@@ -21,31 +21,36 @@
 - `echo "source $HOME/ros2_ws/devel/setup.bash" >> ~/.bashrc`
 - `source $HOME/ros2_ws/devel/setup.bash`
 
-#### 3 Extend length of History
+##### 3. Install MAVROS
+- `sudo apt install ros-humble-mavros ros-humble-mavros-extras`
+- `wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh`
+- sudo bash ./install_geographiclib_datasets.sh
+
+##### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
 
-#### 4 Edit Terminal's Default Profile
+##### 5. Edit Terminal's Default Profile
 - Open Terminal. Click on Edit -> Profile Preferences -> Scrolling
 - On the Scrolling tab, uncheck the box "Limit scrollback to:"
 
-#### 5 GEdit Preferences.
+##### 6. GEdit Preferences.
 - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
 - Click Edit -> Preferences -> Editor. 
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
 - Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
 
-#### 6 Allow user to dialout on USB devices
+##### 7. Allow user to dialout on USB devices
  - `sudo adduser user1 dialout` OR `sudo adduser $USER dialout`
  
-#### 7 Setup git
+##### 8. Setup git
 - `git config --global user.email "user1@nuc01.com"`
 - `git config --global user.name "User1 Nuc01"`
 - `git config --global push.default simple`
 
-#### 8 Software Updates 
+##### 9. Software Updates 
 - 'System Settings ' -> 'Ubuntu Software' tab [[3]](https://help.ubuntu.com/community/Repositories/Ubuntu)
   - Check the top four boxes under 'Downloadable from the Internet': main, universe, restricted, multiverse.
 - 'Updates tab'
@@ -56,7 +61,7 @@
   - 'Notify me of a new Ubuntu version: Never'
 
 #### ----- Optional -----
-#### Display Git-branch in command line prompt
+##### Display Git-branch in command line prompt
 - Copy and paste the following lines into the ~/.bashrc file
 ```
 parse_git_branch() {
@@ -65,11 +70,11 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
-#### Install Google Chrome from command line (Only for 64-bit OS)
+##### Install Google Chrome from command line (Only for 64-bit OS)
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
 - `sudo dpkg -i google-chrome-stable_current_amd64.deb`
 
-#### Install Visual Studio Code
+##### Install Visual Studio Code
 - `sudo apt update && sudo apt upgrade -y`
 - `sudo apt install software-properties-common apt-transport-https wget -y`
 - `wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg`
