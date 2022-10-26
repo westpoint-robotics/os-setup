@@ -24,7 +24,7 @@
 ##### 3. Install MAVROS
 - `sudo apt install ros-humble-mavros ros-humble-mavros-extras`
 - `wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh`
-- sudo bash ./install_geographiclib_datasets.sh
+- `sudo bash ./install_geographiclib_datasets.sh`
 
 ##### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
