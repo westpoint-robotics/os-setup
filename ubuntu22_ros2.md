@@ -65,11 +65,11 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
-##### Install Google Chrome from command line (Only for 64-bit OS)
+#### Install Google Chrome from command line (Only for 64-bit OS)
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
 - `sudo dpkg -i google-chrome-stable_current_amd64.deb`
 
-##### Install Visual Studio Code
+#### Install Visual Studio Code
 - `sudo apt update && sudo apt upgrade -y`
 - `sudo apt install software-properties-common apt-transport-https wget -y`
 - `wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg`
@@ -77,5 +77,5 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 - `sudo apt update`
 - `sudo apt install code`
 
-##### Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
+#### Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 - After completing the steps outlined in the docs above, perform [Post-Installtion](https://docs.docker.com/engine/install/linux-postinstall/) configuration.
