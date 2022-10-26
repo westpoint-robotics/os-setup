@@ -1,58 +1,62 @@
-##### 1. Install Google Chrome stable from a repo
-- `wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
-- `echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list`
-- `sudo apt-get update` 
-- `sudo apt-get install google-chrome-stable`
+##### 0. Download and Install Ubuntu 22.04 LTS Jammy Jellyfish
+- For Odroid XU4, Raspberry 3, or other 32-bit Arm processors - [Ubuntu MATE](https://ubuntu-mate.org/download/armhf/jammy/)
+- For Intel NUC, or other 64-bit x86 processors - [Canonical Ubuntu Desktop](https://releases.ubuntu.com/22.04/)
 
-##### 2. Install [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- After completing the steps outlined in the above ROS Wiki, create your workspace:
-- `mkdir -p ~/catkin_ws/src`
-- `cd ~/catkin_ws/src`
-- `catkin_init_workspace`
+##### 1. Install helper tools
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python3-argparse python3-vcstools python3-catkin-tools network-tools`
+
+##### 2. Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
+- After completing the steps outlined in the above ROS2 Docs, create your workspace:
+- `echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc`
+- `echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc`
+- `echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc`
+- `mkdir -p ~/ros2_ws/src`
+- `cd ~/ros2_ws/src`
+- `git clone https://github.com/ros/ros_tutorials.git -b humble-devel`
 - `cd ~/catkin_ws/`
-- `catkin_make`
-- `echo "source $HOME/catkin_ws/devel/setup.bash" >> ~/.bashrc`
-- `source $HOME/catkin_ws/devel/setup.bash`
-- `rospack profile`
+- `rosdep install -i --from-path src --rosdistro humble -y`
+- `colcon build`
+- `. install/local_setup.bash`
+- `echo "source $HOME/ros2_ws/devel/setup.bash" >> ~/.bashrc`
+- `source $HOME/ros2_ws/devel/setup.bash`
 
-##### 3. Install additional tools
-- `sudo apt install terminator meld gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python-argparse python-vcstools`
-
-#### 4. Extend length of History
-- In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple zero’s to each setting.
+#### 3 Extend length of History
+- In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
 - HISTSIZE=100000
 - HISTFILESIZE=200000
 
-#### 5. Modify Power Saving
-- Go to System Settings -> Power -> Dim screen when inactive
-- Change to 'OFF'
-- -> Power -> Blank screen 
-- Change to 'Never'
-- -> Power -> Bluetooth"
-- Change to 'OFF'
-- -> Power -> Automatic Suspend
-- Change to 'OFF'
-
-#### 7. Edit Terminal's Default Profile
+#### 4 Edit Terminal's Default Profile
 - Open Terminal. Click on Edit -> Profile Preferences -> Scrolling
 - On the Scrolling tab, uncheck the box "Limit scrollback to:"
 
-#### 8. GEDIT Preferences.
+#### 5 GEdit Preferences.
 - Open a text file using Gedit or type `gedit` in a terminal window and hit enter. This brings up the text editor.
 - Click Edit -> Preferences -> Editor. 
 - Change Tab width to 4 , Check the box for "Insert spaces instead of tabs"
 - Enable block commenting. Click Edit -> Preferences -> Plugins, and check the box for "Code Comment"
 - Enable highlight matching brackets. Click Edit -> Preferences -> View, and check the box for "Highlight matching brackets"
 
-#### 9. Allow user1 to dialout on USB devices
- - `sudo adduser user1 dialout`
+#### 6 Allow user to dialout on USB devices
+ - `sudo adduser user1 dialout` OR `sudo adduser $USER dialout`
  
-#### 10. Setup git
+#### 7 Setup git
 - `git config --global user.email "user1@nuc01.com"`
 - `git config --global user.name "User1 Nuc01"`
 - `git config --global push.default simple`
 
-#### 11. Display Git-branch in command line prompt
+#### 8 Software Updates 
+- 'System Settings ' -> 'Ubuntu Software' tab [[3]](https://help.ubuntu.com/community/Repositories/Ubuntu)
+  - Check the top four boxes under 'Downloadable from the Internet': main, universe, restricted, multiverse.
+- 'Updates tab'
+  - Check te first two boxes: bionic-security and bionic-updates
+  - 'Automatically check for updates: Never'
+  - 'When there are security updates: Display Immediately'
+  - 'When there are other updates: Display every two weeks'
+  - 'Notify me of a new Ubuntu version: Never'
+
+#### ----- Optional -----
+#### Display Git-branch in command line prompt
 - Copy and paste the following lines into the ~/.bashrc file
 ```
 parse_git_branch() {
@@ -60,3 +64,18 @@ parse_git_branch() {
 }
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
+
+##### Install Google Chrome from command line (Only for 64-bit OS)
+- `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+- `sudo dpkg -i google-chrome-stable_current_amd64.deb`
+
+##### Install Visual Studio Code
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install software-properties-common apt-transport-https wget -y`
+- `wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg`
+- `echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list`
+- `sudo apt update`
+- `sudo apt install code`
+
+##### Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- After completing the steps outlined in the docs above, perform [Post-Installtion](https://docs.docker.com/engine/install/linux-postinstall/) configuration.
