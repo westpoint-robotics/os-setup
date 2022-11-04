@@ -22,7 +22,7 @@
 - `source $HOME/ros2_ws/devel/setup.bash`
 
 ##### 3. Install MAVROS
-- `sudo apt install ros-humble-mavros ros-humble-mavros-extras`
+- `sudo apt install ros2-humble-mavros ros2-humble-mavros-extras`
 - `wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh`
 - `sudo bash ./install_geographiclib_datasets.sh`
 
