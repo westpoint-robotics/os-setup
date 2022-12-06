@@ -4,7 +4,7 @@
 
 ##### 1. Install helper tools
 - `sudo apt update && sudo apt upgrade -y`
-- `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python3-vcstools`
+- `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted net-tools`
 
 ##### 2. Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
 - After completing the steps outlined in the above ROS2 Docs, create your workspace:
@@ -21,10 +21,9 @@
 - `echo "source $HOME/ros2_ws/devel/setup.bash" >> ~/.bashrc`
 - `source $HOME/ros2_ws/devel/setup.bash`
 
-##### 3. Install MAVROS
-- `sudo apt install ros-humble-mavros ros-humble-mavros-extras`
-- `wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh`
-- `sudo bash ./install_geographiclib_datasets.sh`
+##### 3. Install helper tools
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install python3-vcstools`
 
 ##### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
