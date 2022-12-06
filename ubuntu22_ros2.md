@@ -4,7 +4,7 @@
 
 ##### 1. Install helper tools
 - `sudo apt update && sudo apt upgrade -y`
-- `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python3-argparse python3-vcstools python3-catkin-tools network-tools`
+- `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted python3-vcstools`
 
 ##### 2. Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
 - After completing the steps outlined in the above ROS2 Docs, create your workspace:
