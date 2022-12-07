@@ -29,7 +29,8 @@ After completing the steps outlined in the above ROS2 Docs, create your workspac
 - `echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc`
 
 ##### 4. Extend length of History
-- In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
+In the bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
+- `gedit ~/.bashrc`
 - HISTSIZE=100000
 - HISTFILESIZE=200000
 
