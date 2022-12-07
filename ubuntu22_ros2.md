@@ -7,7 +7,7 @@
 - `sudo apt install terminator meld gedit gedit-plugins ant git gitk git-core git-doc openssh-server minicom gparted net-tools`
 
 ##### 2. Install [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
-- After completing the steps outlined in the above ROS2 Docs, create your workspace:
+After completing the steps outlined in the above ROS2 Docs, create your workspace:
 - `echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc`
 - `echo "export ROS_DOMAIN_ID=11" >> ~/.bashrc`
 - `echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc`
