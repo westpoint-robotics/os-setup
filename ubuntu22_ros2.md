@@ -24,9 +24,9 @@
 ##### 3. Install helper tools
 - `sudo apt update && sudo apt upgrade -y`
 - `sudo apt install python3-vcstools ~nros-humble-rqt* sudo apt install ros-dev-tools python3-colcon-common-extensions`
-- echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
-- echo "export _colcon_cd_root=/opt/ros/humble/" >> ~/.bashrc
-- echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
+- `echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc`
+- `echo "export _colcon_cd_root=/opt/ros/humble/" >> ~/.bashrc`
+- `echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc`
 
 ##### 4. Extend length of History
 - In the ~/.bashrc file change the below settings to lengthen the history file. Just add a couple of zero’s to each setting.
